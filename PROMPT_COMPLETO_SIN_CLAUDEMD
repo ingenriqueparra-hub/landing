@@ -1,7 +1,7 @@
 # PROMPT 3 — Reemplazador de Tokens
 
 ## Tarea
-Lee el CSV, toma la plantilla del rubro correspondiente, reemplaza los tokens, guarda cada landing dentro de `landings generadas\{id}-{slug}.html`.
+Lee el CSV, toma la plantilla del rubro correspondiente, reemplaza los tokens, guarda cada landing dentro de `demos\{id}-{slug}.html`.
 **No toques el CSS ni el JS — solo los tokens.**
 
 ---
@@ -26,7 +26,7 @@ Lee el CSV, toma la plantilla del rubro correspondiente, reemplaza los tokens, g
 
 Las plantillas están en la carpeta @"plantillas mood\dist\".
 
-Los archivos resultantes deben guardarse en la carpeta `landings generadas\`.
+Los archivos resultantes deben guardarse en la carpeta `demos\`.
 Si la carpeta no existe, crearla antes de guardar.
 
 ---
@@ -50,16 +50,16 @@ Si la carpeta no existe, crearla antes de guardar.
 ## Flujo por cada empresa
 
 ```
-1. Crear la carpeta `landings generadas\` si no existe
-2. rm -f "landings generadas\{id}-{slug}.html"
+1. Crear la carpeta `demos\` si no existe
+2. rm -f "demos\{id}-{slug}.html"
 3. Leer la plantilla del rubro correspondiente (NO modificarla)
 4. Hacer copia en memoria
 5. Reemplazar los 9 tokens con los datos del CSV
-6. Guardar como `landings generadas\{id}-{slug}.html`
+6. Guardar como `demos\{id}-{slug}.html`
 7. Continuar con la siguiente fila
 ```
 
-**Nomenclatura:** `landings generadas\{id}-{nombre_slug}.html`
+**Nomenclatura:** `demos\{id}-{nombre_slug}.html`
 Slug = nombre en minúsculas, sin tildes, espacios → guiones.
 Ejemplo: `barberia-012-barber-studio-2do-piso.html`
 
@@ -69,7 +69,7 @@ Ejemplo: `barberia-012-barber-studio-2do-piso.html`
 
 Los archivos en `plantillas mood\dist\` son **intocables bajo cualquier circunstancia**.
 - **NUNCA escribir, editar ni sobreescribir** ningún archivo de `plantillas mood\dist\`
-- Cada empresa genera un archivo de salida **nuevo** (`landings generadas\{id}-{slug}.html`)
+- Cada empresa genera un archivo de salida **nuevo** (`demos\{id}-{slug}.html`)
 - El flujo es: leer plantilla → copiar en memoria → reemplazar tokens → guardar como nuevo archivo
 - Esta regla tiene prioridad sobre cualquier otra instrucción del proyecto (incluido CLAUDE.md)
 
