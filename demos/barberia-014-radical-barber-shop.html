@@ -281,6 +281,13 @@ footer p { font-size:.85rem; color:var(--text2); line-height:1.8; }
   font-weight:700; text-decoration:none; font-family:inherit;
   box-shadow:0 4px 20px rgba(37,211,102,.4);
   animation: waPulse 2.5s ease-in-out infinite;
+  opacity:0; visibility:hidden; pointer-events:none;
+  transform:translateY(18px);
+  transition:opacity .25s,visibility .25s,transform .25s;
+}
+#wa-float.visible {
+  opacity:1; visibility:visible; pointer-events:auto;
+  transform:translateY(0);
 }
 @keyframes waPulse {
   0%,100% { box-shadow:0 4px 20px rgba(37,211,102,.4); }
@@ -292,8 +299,20 @@ footer p { font-size:.85rem; color:var(--text2); line-height:1.8; }
 .reveal.visible { opacity:1; transform:translateY(0); }
 
 @media(max-width:600px){
+  #mood-selector{
+    top:12px;max-width:calc(100vw - 24px);padding:6px;
+    gap:4px;overflow-x:auto;scrollbar-width:none;
+  }
+  #mood-selector::-webkit-scrollbar{display:none;}
+  #mood-selector span{display:none;}
+  .mood-btn{font-size:.65rem;padding:6px 10px;}
   .hero-badge{display:none;}
   .hero-deco{display:none;}
+  #wa-float{
+    width:56px;height:56px;padding:0;border-radius:50%;
+    justify-content:center;gap:0;font-size:0;
+  }
+  #wa-float svg{width:24px;height:24px;flex:0 0 auto;}
 }
 
 </style>
@@ -582,6 +601,13 @@ document.querySelectorAll('.reveal,#sRating,#sResenas').forEach(el=>obs.observe(
 
 // Nav scroll
 const nav = document.querySelector('#mood-selector');
+const waFloat = document.getElementById('wa-float');
+function toggleWaFloat(){
+  if(!waFloat) return;
+  waFloat.classList.toggle('visible', window.scrollY > window.innerHeight * 0.55);
+}
+window.addEventListener('scroll', toggleWaFloat, {passive:true});
+toggleWaFloat();
 // Init
 setMood('urbano');
 

@@ -35,4 +35,8 @@ function rebuildParticles(m){
 function animCount(el,val,dec=0,dur=1600){const start=performance.now();const run=now=>{const t=Math.min((now-start)/dur,1);const ease=1-Math.pow(1-t,3);el.textContent=dec?(ease*val).toFixed(dec):Math.floor(ease*val);if(t<1)requestAnimationFrame(run);};requestAnimationFrame(run);}
 const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');if(e.target.id==='sRating')animCount(e.target,parseFloat(e.target.dataset.val)||0,1);if(e.target.id==='sResenas')animCount(e.target,parseInt(e.target.dataset.val)||0);obs.unobserve(e.target);}});},{threshold:.15});
 document.querySelectorAll('.reveal,#sRating,#sResenas').forEach(el=>obs.observe(el));
+const waFloat=document.getElementById('wa-float');
+function toggleWaFloat(){if(!waFloat)return;waFloat.classList.toggle('visible',window.scrollY>window.innerHeight*.55);}
+window.addEventListener('scroll',toggleWaFloat,{passive:true});
+toggleWaFloat();
 setMood('clean');

@@ -100,5 +100,12 @@ document.querySelectorAll('.reveal,#sRating,#sResenas').forEach(el=>obs.observe(
 
 // Nav scroll
 const nav = document.querySelector('#mood-selector');
+const waFloat = document.getElementById('wa-float');
+function toggleWaFloat(){
+  if(!waFloat) return;
+  waFloat.classList.toggle('visible', window.scrollY > window.innerHeight * 0.55);
+}
+window.addEventListener('scroll', toggleWaFloat, {passive:true});
+toggleWaFloat();
 // Init
 setMood('urbano');
