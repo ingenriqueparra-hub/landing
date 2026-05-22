@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{NOMBRE_NEGOCIO}} | Psicólogo — {{DISTRITO}}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link id="gfont" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="plantilla-psicologo.css">
+</head>
+<body data-mood="calma">
+<div id="amb" style="position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;"></div>
+
+<div id="mood-selector">
+  <span>Mood</span>
+  <button class="mood-btn active" data-m="calma" onclick="setMood('calma')">Calma Natural</button>
+  <button class="mood-btn" data-m="calidez" onclick="setMood('calidez')">Calidez Humana</button>
+  <button class="mood-btn" data-m="sereno" onclick="setMood('sereno')">Sereno Profundo</button>
+</div>
+
+<section id="hero">
+  <div class="hbg" id="hbg"></div>
+  <div class="hbreathe" id="hbreathe"></div>
+  <div class="hero-inner">
+    <div class="hero-label">🌿 Psicología · {{DISTRITO}}</div>
+    <h1 class="hero-title">{{NOMBRE_NEGOCIO}}</h1>
+    <p class="hero-sub">{{TAGLINE}} — Un espacio seguro para tu bienestar emocional.</p>
+    <div class="hero-ctas">
+      <a href="https://wa.me/51{{WHATSAPP}}" target="_blank" rel="noopener" class="cta-hero">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.116.549 4.107 1.51 5.84L.057 23.882l6.204-1.626A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.376l-.36-.214-3.681.965.981-3.595-.235-.369A9.818 9.818 0 1112 21.818z"/></svg>
+        Agenda tu consulta
+      </a>
+      <a href="#servicios" class="cta-sec">Ver servicios →</a>
+    </div>
+  </div>
+  <div class="hero-badge">
+    <div class="stars">★★★★★</div>
+    <div class="score">{{RATING}}</div>
+    <div class="lbl">{{RESENAS}} reseñas</div>
+  </div>
+</section>
+
+<section id="servicios" class="section">
+  <div class="wrap">
+    <div class="reveal"><span class="sec-tag">Especialidades</span><h2 class="sec-title">Áreas de atención</h2><div class="divider"></div></div>
+    <div class="srv-grid">
+      <div class="srv-card reveal"><div class="srv-icon">🧠</div><h3>Terapia Individual</h3><p>Proceso personalizado para trabajar tus emociones y pensamientos.</p></div>
+      <div class="srv-card reveal"><div class="srv-icon">💑</div><h3>Terapia de Pareja</h3><p>Fortalece tu relación y aprende a comunicarte mejor.</p></div>
+      <div class="srv-card reveal"><div class="srv-icon">👨‍👩‍👧</div><h3>Terapia Familiar</h3><p>Mejora los vínculos y la dinámica familiar en conjunto.</p></div>
+      <div class="srv-card reveal"><div class="srv-icon">😰</div><h3>Ansiedad y Estrés</h3><p>Herramientas prácticas para manejar la ansiedad del día a día.</p></div>
+      <div class="srv-card reveal"><div class="srv-icon">🌙</div><h3>Depresión</h3><p>Acompañamiento especializado en procesos de duelo y tristeza.</p></div>
+      <div class="srv-card reveal"><div class="srv-icon">👶</div><h3>Psicología Infantil</h3><p>Atención temprana para el desarrollo emocional de los niños.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="confianza" class="section">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center"><span class="sec-tag">Nuestra trayectoria</span><h2 class="sec-title" style="text-align:center">Un espacio de confianza</h2><div class="divider" style="margin:1rem auto 2rem"></div></div>
+    <div class="stats-row">
+      <div class="stat reveal"><div class="stat-n" id="sRating" data-val="{{RATING}}">0</div><div class="stat-l">⭐ Rating Google</div></div>
+      <div class="stat reveal"><div class="stat-n" id="sResenas" data-val="{{RESENAS}}">0</div><div class="stat-l">Pacientes satisfechos</div></div>
+      <div class="stat reveal"><div class="stat-n">6</div><div class="stat-l">Especialidades</div></div>
+      <div class="stat reveal"><div class="stat-n">100%</div><div class="stat-l">Confidencialidad</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonios" class="section">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center"><span class="sec-tag">Testimonios</span><h2 class="sec-title" style="text-align:center">Experiencias que transforman</h2><div class="divider" style="margin:1rem auto 2rem"></div></div>
+    <div class="test-grid">
+      <div class="test-card reveal"><div class="test-stars">★★★★★</div><p class="test-text">"Llegué en un momento muy difícil y la psicóloga me ayudó a encontrar el camino. El espacio es acogedor y me sentí escuchada desde el primer día."</p><span class="test-author">— Ana Quispe</span></div>
+      <div class="test-card reveal"><div class="test-stars">★★★★★</div><p class="test-text">"El proceso fue gradual pero muy efectivo. Aprendí herramientas que uso todos los días. Le recomendaría a cualquier persona que quiera mejorar su bienestar."</p><span class="test-author">— Pedro Huamán</span></div>
+      <div class="test-card reveal"><div class="test-stars">★★★★★</div><p class="test-text">"Llevé a mi hijo de 8 años y los cambios fueron notables desde la tercera sesión. La profesional tiene una paciencia y vocación increíble."</p><span class="test-author">— Carmen Flores</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="ubicacion" class="section" style="background:var(--bg-alt)">
+  <div class="wrap">
+    <div class="reveal"><span class="sec-tag">¿Dónde estamos?</span><h2 class="sec-title">Encuéntranos en {{DISTRITO}}</h2><div class="divider"></div></div>
+    <div class="map-wrap reveal"><iframe src="https://maps.google.com/maps?q={{DIRECCION}}&output=embed" allowfullscreen loading="lazy"></iframe></div>
+    <a href="{{URL_MAPS}}" target="_blank" rel="noopener" class="maps-btn reveal">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Ver en Google Maps
+    </a>
+  </div>
+</section>
+
+<section id="contacto" class="section">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center"><span class="sec-tag">Contáctanos</span><h2 class="sec-title" style="text-align:center">¿Hablamos?</h2><div class="divider" style="margin:1rem auto 2rem"></div></div>
+    <div class="con-grid">
+      <div class="con-card reveal"><h3>WhatsApp</h3><a href="https://wa.me/51{{WHATSAPP}}" target="_blank">+51 {{TELEFONO}}</a></div>
+      <div class="con-card reveal"><h3>Teléfono</h3><a href="tel:+51{{TELEFONO}}">+51 {{TELEFONO}}</a></div>
+      <div class="con-card reveal"><h3>Dirección</h3><a href="{{URL_MAPS}}" target="_blank">{{DIRECCION}}</a></div>
+      <div class="con-card reveal"><h3>Horario</h3><a href="https://wa.me/51{{WHATSAPP}}" target="_blank" style="color:var(--text2);pointer-events:none;">Lun–Vie 9am–7pm · Sáb 9am–1pm</a></div>
+    </div>
+    <div style="text-align:center;margin-top:3rem" class="reveal">
+      <a href="https://wa.me/51{{WHATSAPP}}" target="_blank" class="cta-hero" style="font-size:1.1rem;padding:20px 48px;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.116.549 4.107 1.51 5.84L.057 23.882l6.204-1.626A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.376l-.36-.214-3.681.965.981-3.595-.235-.369A9.818 9.818 0 1112 21.818z"/></svg>
+        Escríbenos por WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap"><p style="font-size:1.2rem;font-weight:700;color:var(--text);font-family:'Lora',serif;margin-bottom:.4rem;">{{NOMBRE_NEGOCIO}}</p><p>Psicólogo · {{DISTRITO}}, Lima · <strong>{{TAGLINE}}</strong></p><p style="margin-top:.4rem"><a href="tel:+51{{TELEFONO}}" style="color:var(--text2);text-decoration:none;">+51 {{TELEFONO}}</a></p></div></footer>
+
+<a href="https://wa.me/51{{WHATSAPP}}" target="_blank" rel="noopener" id="wa-float">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.116.549 4.107 1.51 5.84L.057 23.882l6.204-1.626A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.376l-.36-.214-3.681.965.981-3.595-.235-.369A9.818 9.818 0 1112 21.818z"/></svg>
+  Escríbenos
+</a>
+
+<script src="plantilla-psicologo.js"></script>
+</body>
+</html>

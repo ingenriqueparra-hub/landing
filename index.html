@@ -1,0 +1,569 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio · Landing Pages Villa El Salvador</title>
+  <meta name="description" content="Portafolio de landing pages personalizadas para negocios de Villa El Salvador, Lima. Diseno profesional, responsive y listo para WhatsApp.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0d0d14;
+      --bg-2: #13131f;
+      --bg-3: #1a1a2a;
+      --border: rgba(255,255,255,0.07);
+      --border-hover: rgba(255,255,255,0.18);
+      --text: #e2e2f0;
+      --text-2: rgba(226,226,240,0.55);
+      --white: #ffffff;
+      --accent: #7c6dfa;
+      --accent-2: #a78bfa;
+      --green: #34d399;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* GRID BG */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(124,109,250,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(124,109,250,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* HEADER */
+    header {
+      position: relative;
+      z-index: 1;
+      padding: 5rem 2rem 4rem;
+      text-align: center;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .header-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(124,109,250,0.12);
+      border: 1px solid rgba(124,109,250,0.3);
+      color: var(--accent-2);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: 0.45rem 1.2rem;
+      border-radius: 50px;
+      margin-bottom: 2rem;
+    }
+    .header-chip::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--green);
+      border-radius: 50%;
+      box-shadow: 0 0 6px var(--green);
+    }
+
+    header h1 {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      font-weight: 800;
+      line-height: 1.1;
+      color: var(--white);
+      letter-spacing: -1.5px;
+      margin-bottom: 1.2rem;
+    }
+    header h1 span {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: var(--text-2);
+      line-height: 1.7;
+      font-weight: 300;
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .header-stats {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .hstat {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.88rem;
+      color: var(--text-2);
+    }
+    .hstat strong { color: var(--white); font-size: 1rem; font-weight: 700; }
+    .hstat-dot { width: 4px; height: 4px; background: var(--border-hover); border-radius: 50%; }
+
+    /* FILTERS */
+    .filters {
+      position: relative; z-index: 1;
+      display: flex;
+      gap: 0.6rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 0 1.5rem 3rem;
+    }
+    .filter-btn {
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      color: var(--text-2);
+      font-size: 0.8rem;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      padding: 0.5rem 1.2rem;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: rgba(124,109,250,0.15);
+      border-color: var(--accent);
+      color: var(--accent-2);
+    }
+
+    /* GRID */
+    .grid-wrap {
+      position: relative; z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem 5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 1.5rem;
+    }
+
+    /* CARD */
+    .card {
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      text-decoration: none;
+      color: var(--text);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    }
+
+    .card-img {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+      background: var(--bg-3);
+    }
+    .card-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+      opacity: 0.75;
+    }
+    .card:hover .card-img img { transform: scale(1.06); opacity: 0.9; }
+
+    .card-img-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(13,13,20,0.9) 0%, transparent 60%);
+    }
+
+    .card-category {
+      position: absolute;
+      top: 1rem; left: 1rem;
+      background: rgba(13,13,20,0.85);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 50px;
+      padding: 0.3rem 0.85rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .card-rating {
+      position: absolute;
+      top: 1rem; right: 1rem;
+      background: rgba(13,13,20,0.85);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 50px;
+      padding: 0.3rem 0.8rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #fbbf24;
+    }
+
+    .card-style-tag {
+      position: absolute;
+      bottom: 1rem; left: 1rem;
+      display: flex; gap: 0.4rem;
+    }
+    .style-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.3);
+    }
+
+    .card-body {
+      padding: 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-name {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.4rem;
+      line-height: 1.3;
+    }
+
+    .card-desc {
+      font-size: 0.84rem;
+      color: var(--text-2);
+      line-height: 1.6;
+      flex: 1;
+      margin-bottom: 1.2rem;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .card-style-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-2);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .card-arrow {
+      width: 32px; height: 32px;
+      background: rgba(124,109,250,0.12);
+      border: 1px solid rgba(124,109,250,0.25);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--accent-2);
+      transition: all 0.3s;
+    }
+    .card:hover .card-arrow {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--white);
+      transform: rotate(45deg);
+    }
+
+    /* LOCATION BADGE */
+    .location-badge {
+      position: relative; z-index: 1;
+      text-align: center;
+      padding: 0 1.5rem 4rem;
+    }
+    .location-badge span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      padding: 0.5rem 1.4rem;
+      font-size: 0.8rem;
+      color: var(--text-2);
+    }
+
+    /* FOOTER */
+    footer {
+      position: relative; z-index: 1;
+      border-top: 1px solid var(--border);
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
+    .footer-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-brand { font-size: 0.88rem; font-weight: 700; color: var(--accent-2); }
+    .footer-sub { font-size: 0.78rem; color: var(--text-2); }
+    .footer-gh {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--bg-3);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.5rem 1rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text);
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .footer-gh:hover { border-color: var(--border-hover); color: var(--white); }
+
+    /* FADE IN */
+    .card { animation: fadeUp 0.5s ease both; }
+    .card:nth-child(1) { animation-delay: 0.05s; }
+    .card:nth-child(2) { animation-delay: 0.1s; }
+    .card:nth-child(3) { animation-delay: 0.15s; }
+    .card:nth-child(4) { animation-delay: 0.2s; }
+    .card:nth-child(5) { animation-delay: 0.25s; }
+    .card:nth-child(6) { animation-delay: 0.3s; }
+    .card:nth-child(7) { animation-delay: 0.35s; }
+    .card:nth-child(8) { animation-delay: 0.4s; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .card.hidden { display: none; }
+
+    @media (max-width: 768px) {
+      header { padding: 3.5rem 1.5rem 3rem; }
+      .grid-wrap { grid-template-columns: 1fr; }
+      .header-stats { gap: 1.5rem; }
+      .footer-inner { justify-content: center; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-chip">Portafolio · Villa El Salvador</div>
+    <h1>Landing Pages para<br><span>Negocios Locales</span></h1>
+    <p>Propuestas web personalizadas para negocios de Villa El Salvador, Lima. Cada pagina esta disenada para captar clientes via WhatsApp con identidad visual propia.</p>
+    <div class="header-stats">
+      <div class="hstat"><strong>5</strong> paginas generadas</div>
+      <div class="hstat-dot"></div>
+      <div class="hstat"><strong>4</strong> rubros distintos</div>
+      <div class="hstat-dot"></div>
+      <div class="hstat"><strong>100%</strong> responsive</div>
+      <div class="hstat-dot"></div>
+      <div class="hstat"><strong>1</strong> archivo HTML por negocio</div>
+    </div>
+  </header>
+
+  <!-- FILTERS -->
+  <div class="filters">
+    <button class="filter-btn active" data-filter="all">Todos</button>
+    <button class="filter-btn" data-filter="barberia">Barberia</button>
+    <button class="filter-btn" data-filter="dental">Clinica Dental</button>
+    <button class="filter-btn" data-filter="psicologo">Psicologo</button>
+    <button class="filter-btn" data-filter="fotografia">Fotografia</button>
+  </div>
+
+  <!-- GRID -->
+  <div class="grid-wrap">
+    <!-- Barber Studio 2do Piso -->
+    <a href="landings%20generadas/barberia-012-barber-studio-2do-piso.html" class="card" data-cat="barberia" target="_blank">
+      <div class="card-img">
+        <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=700&q=80&fit=crop" alt="BARBER STUDIO 2do Piso">
+        <div class="card-img-overlay"></div>
+        <div class="card-category">Barberia</div>
+        <div class="card-rating">5.0 · 4 resenas</div>
+        <div class="card-style-tag">
+          <div class="style-dot" style="background:#c49a3c"></div>
+          <div class="style-dot" style="background:#e63946"></div>
+          <div class="style-dot" style="background:#b87333"></div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">BARBER STUDIO 2do Piso</div>
+        <p class="card-desc">Alta oportunidad. Barberia en Villa EL Salvador con reserva por WhatsApp, servicios destacados, resenas y ubicacion lista para convertir visitas en citas.</p>
+        <div class="card-footer">
+          <div class="card-style-label">Urbano Oscuro · Street Energy · Premium Minimal</div>
+          <div class="card-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Radical Barber Shop -->
+    <a href="landings%20generadas/barberia-014-radical-barber-shop.html" class="card" data-cat="barberia" target="_blank">
+      <div class="card-img">
+        <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=700&q=80&fit=crop" alt="RADICAL BARBER SHOP">
+        <div class="card-img-overlay"></div>
+        <div class="card-category">Barberia</div>
+        <div class="card-rating">4.3 · 4 resenas</div>
+        <div class="card-style-tag">
+          <div class="style-dot" style="background:#c49a3c"></div>
+          <div class="style-dot" style="background:#e63946"></div>
+          <div class="style-dot" style="background:#b87333"></div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">RADICAL BARBER SHOP</div>
+        <p class="card-desc">Alta oportunidad. Barberia en Villa EL Salvador con foco en cortes, degradados, barba, contacto directo y mapa para captar clientes locales.</p>
+        <div class="card-footer">
+          <div class="card-style-label">Urbano Oscuro · Street Energy · Premium Minimal</div>
+          <div class="card-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Multident -->
+    <a href="landings%20generadas/dentista-039-multident-villa-el-salvador-central.html" class="card" data-cat="dental" target="_blank">
+      <div class="card-img">
+        <img src="https://images.unsplash.com/photo-1643660526741-094639fbe53a?q=80&w=700&auto=format&fit=crop&ixlib=rb-4.1.0" alt="Multident Villa El Salvador Central">
+        <div class="card-img-overlay"></div>
+        <div class="card-category">Clinica Dental</div>
+        <div class="card-rating">4.7 · 14 resenas</div>
+        <div class="card-style-tag">
+          <div class="style-dot" style="background:#1a6b8a"></div>
+          <div class="style-dot" style="background:#4a7c59"></div>
+          <div class="style-dot" style="background:#06b6d4"></div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Multident Villa El Salvador Central</div>
+        <p class="card-desc">Alta oportunidad. Clinica dental en Villa EL Salvador con agenda por WhatsApp, servicios odontologicos, reputacion visible y ubicacion integrada.</p>
+        <div class="card-footer">
+          <div class="card-style-label">Clean Trust · Calido Moderno · Tech Health</div>
+          <div class="card-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Consultorio Elizabeth Guerra -->
+    <a href="landings%20generadas/psicologo-023-consultorio-psicologico-elizabeth-guerra.html" class="card" data-cat="psicologo" target="_blank">
+      <div class="card-img">
+        <img src="https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?w=700&q=80&fit=crop" alt="Consultorio Psicologico Elizabeth Guerra">
+        <div class="card-img-overlay"></div>
+        <div class="card-category">Psicologo</div>
+        <div class="card-rating">5.0 · 11 resenas</div>
+        <div class="card-style-tag">
+          <div class="style-dot" style="background:#5a7a5a"></div>
+          <div class="style-dot" style="background:#c47c3a"></div>
+          <div class="style-dot" style="background:#4a6fa5"></div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Consultorio Psicologico Elizabeth Guerra</div>
+        <p class="card-desc">Alta oportunidad. Servicio psicologico en Villa EL Salvador con enfoque cercano, llamada a consulta, areas de atencion y contacto claro.</p>
+        <div class="card-footer">
+          <div class="card-style-label">Calma Natural · Calidez Humana · Sereno Profundo</div>
+          <div class="card-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Foto Midis -->
+    <a href="landings%20generadas/fotografo-034-foto-midis.html" class="card" data-cat="fotografia" target="_blank">
+      <div class="card-img">
+        <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=700&q=80&fit=crop" alt="Foto Midis">
+        <div class="card-img-overlay"></div>
+        <div class="card-category">Fotografia</div>
+        <div class="card-rating">2.5 · 8 resenas</div>
+        <div class="card-style-tag">
+          <div class="style-dot" style="background:#f5c518"></div>
+          <div class="style-dot" style="background:#e63946"></div>
+          <div class="style-dot" style="background:#d4691e"></div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Foto Midis</div>
+        <p class="card-desc">Alta oportunidad. Estudio fotografico en Villa EL Salvador con sesiones, eventos, producto, contacto por WhatsApp y mapa del estudio.</p>
+        <div class="card-footer">
+          <div class="card-style-label">Dark Studio · Editorial · Film Vintage</div>
+          <div class="card-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </div>
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- LOCATION -->
+  <div class="location-badge">
+    <span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Todos los negocios ubicados en Villa El Salvador, Lima · Peru
+    </span>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Landing Pages VES</div>
+        <div class="footer-sub">Portafolio de propuestas web · Villa El Salvador, Lima</div>
+      </div>
+      <a href="https://github.com/ingenriqueparra-hub/landing-pages-villa-el-salvador" target="_blank" class="footer-gh">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        Ver en GitHub
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    const btns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.card');
+
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        btns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+        cards.forEach(card => {
+          if (filter === 'all' || card.dataset.cat === filter) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
+
+

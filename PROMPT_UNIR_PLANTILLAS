@@ -1,0 +1,10 @@
+Correr: python3 "plantillas mood/build.py"
+Esto genera los archivos unificados en plantillas mood/dist/
+
+REGLAS ABSOLUTAS:
+- No leas ni analices nada que no esté en la lista de cambios
+- No expliques lo que vas a hacer, hazlo directamente
+- No sugieras mejoras adicionales
+- No verifiques el resultado con el browser
+- Sin explicaciones entre pasos
+- Sin sugerencias adicionales

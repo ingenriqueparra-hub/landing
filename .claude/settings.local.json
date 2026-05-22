@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(New-Item -ItemType Directory -Force -Path \"C:\\\\Users\\\\ENRIQUE\\\\Desktop\\\\Landing Generadas con Claude v2\\\\plantillas mood\\\\src\")",
+      "Bash(Out-Null)",
+      "Bash(Write-Host \"OK\")",
+      "PowerShell(New-Item *)"
+    ]
+  }
+}

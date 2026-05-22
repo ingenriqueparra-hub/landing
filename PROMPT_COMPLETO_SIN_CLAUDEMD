@@ -1,0 +1,96 @@
+# PROMPT 3 — Reemplazador de Tokens
+
+## Tarea
+Lee el CSV, toma la plantilla del rubro correspondiente, reemplaza los tokens, guarda cada landing dentro de `landings generadas\{id}-{slug}.html`.
+**No toques el CSS ni el JS — solo los tokens.**
+
+---
+
+## REGLAS ABSOLUTAS:
+- No leas ni analices nada que no esté en la lista de cambios
+- No expliques lo que vas a hacer, hazlo directamente
+- No sugieras mejoras adicionales
+- No verifiques el resultado con el browser
+- Sin explicaciones entre pasos
+- Sin sugerencias adicionales
+
+---
+
+## Plantillas disponibles
+| Rubro (valor exacto en CSV) | Plantilla |
+|---|---|
+| Barbería | `plantilla-barberia.html` |
+| Clínica dental | `plantilla-dental.html` |
+| Psicólogo | `plantilla-psicologo.html` |
+| Estudio de fotografía | `plantilla-fotografia.html` |
+
+Las plantillas están en la carpeta @"plantillas mood\dist\".
+
+Los archivos resultantes deben guardarse en la carpeta `landings generadas\`.
+Si la carpeta no existe, crearla antes de guardar.
+
+---
+
+## Tokens a reemplazar
+
+| Token | Campo CSV | Regla de limpieza |
+|---|---|---|
+| `{{NOMBRE_NEGOCIO}}` | `nombre_negocio` | Tal cual |
+| `{{DISTRITO}}` | `distrito` | Tal cual |
+| `{{DIRECCION}}` | `direccion` | Tal cual |
+| `{{TELEFONO}}` | `telefono` | Solo dígitos, sin espacios ni guiones |
+| `{{WHATSAPP}}` | `whatsapp` | Solo dígitos · si empieza en 9 y tiene 9 dígitos → agregar 51 · si está vacío → usar telefono limpio |
+| `{{URL_MAPS}}` | `url_google_maps` | Tal cual |
+| `{{RATING}}` | `rating` | Punto decimal (si viene con coma → convertir) |
+| `{{RESENAS}}` | `cantidad_resenas` | Solo número entero |
+| `{{TAGLINE}}` | `oportunidad_textual` | Si vacío → usar nombre_negocio + "en " + distrito |
+
+---
+
+## Flujo por cada empresa
+
+```
+1. Crear la carpeta `landings generadas\` si no existe
+2. rm -f "landings generadas\{id}-{slug}.html"
+3. Leer la plantilla del rubro correspondiente (NO modificarla)
+4. Hacer copia en memoria
+5. Reemplazar los 9 tokens con los datos del CSV
+6. Guardar como `landings generadas\{id}-{slug}.html`
+7. Continuar con la siguiente fila
+```
+
+**Nomenclatura:** `landings generadas\{id}-{nombre_slug}.html`
+Slug = nombre en minúsculas, sin tildes, espacios → guiones.
+Ejemplo: `barberia-012-barber-studio-2do-piso.html`
+
+---
+
+## ⚠️ REGLA ABSOLUTA — Las plantillas son masters
+
+Los archivos en `plantillas mood\dist\` son **intocables bajo cualquier circunstancia**.
+- **NUNCA escribir, editar ni sobreescribir** ningún archivo de `plantillas mood\dist\`
+- Cada empresa genera un archivo de salida **nuevo** (`landings generadas\{id}-{slug}.html`)
+- El flujo es: leer plantilla → copiar en memoria → reemplazar tokens → guardar como nuevo archivo
+- Esta regla tiene prioridad sobre cualquier otra instrucción del proyecto (incluido CLAUDE.md)
+
+---
+
+## Reglas críticas
+
+- **NUNCA editar la plantilla original** — trabajar siempre sobre una copia en memoria
+- **NUNCA tocar CSS ni JS** — solo reemplazar los 9 tokens listados arriba
+- Si el rubro del CSV no coincide exactamente con la tabla → reportar en resumen y omitir
+- Si un token no tiene valor en el CSV → aplicar la regla de limpieza de la tabla; si no hay fallback posible → dejar el token vacío (no inventar datos)
+- El archivo de salida debe ser idéntico a la plantilla excepto por los 9 tokens
+
+---
+
+## Resumen final
+
+```
+✅ Landings generadas: X
+📁 Archivos:
+   - {id}-{slug}.html · rubro: [rubro] · mood: [mood activo en plantilla]
+⚠️  Omitidas (rubro no reconocido): Y
+⚠️  Tokens sin datos: Z (listar cuáles)
+```
