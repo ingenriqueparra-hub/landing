@@ -3,137 +3,149 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MiPagina.pe | Paginas web para negocios locales</title>
-  <meta name="description" content="Diseno y publico paginas web para negocios locales. Incluye dominio, hosting, WhatsApp, mapa de Google y una web lista para captar clientes.">
+  <meta name="theme-color" content="#06153f">
+  <title>MiPagina.pe | Web, Google y WhatsApp para negocios locales</title>
+  <meta name="description" content="Digitaliza tu negocio local con una página web profesional, posicionamiento en Google y automatización de WhatsApp. Soluciones rápidas, accesibles y listas para vender.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     :root {
-      --ink: #13151f;
-      --ink-soft: #4d5568;
-      --paper: #fbfaf7;
-      --paper-2: #f0f4f8;
-      --panel: #ffffff;
-      --line: rgba(19,21,31,.11);
-      --brand: #176b87;
-      --brand-2: #22a699;
-      --accent: #f2a541;
-      --rose: #be3455;
-      --dark: #0f1720;
-      --white: #ffffff;
-      --shadow: 0 18px 50px rgba(15,23,32,.12);
+      --navy-950: #02081f;
+      --navy-900: #06153f;
+      --blue: #075af5;
+      --blue-light: #2b89ff;
+      --lime: #8df500;
+      --yellow: #ffc400;
+      --green: #21c65b;
+      --purple: #7637ea;
+      --red: #f04455;
+      --ink: #071536;
+      --muted: #566078;
+      --paper: #f4f7ff;
+      --white: #fff;
+      --line: rgba(7, 21, 54, .10);
+      --shadow: 0 24px 70px rgba(3, 18, 64, .14);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
     body {
       font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--ink);
       background: var(--paper);
       overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
     }
+    ::selection { color: var(--navy-950); background: var(--lime); }
     a { color: inherit; }
+    svg { display: block; }
 
+    .progress {
+      position: fixed;
+      inset: 0 auto auto 0;
+      z-index: 100;
+      width: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--yellow), var(--lime));
+      box-shadow: 0 0 18px rgba(141, 245, 0, .75);
+    }
     .topbar {
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 50;
-      background: rgba(251,250,247,.86);
-      border-bottom: 1px solid var(--line);
-      backdrop-filter: blur(16px);
+      inset: 0 0 auto;
+      z-index: 90;
+      padding: 12px 18px;
+      transition: padding .25s ease;
     }
+    .topbar.scrolled { padding-top: 8px; }
     .nav {
       max-width: 1180px;
+      min-height: 64px;
       margin: 0 auto;
-      padding: 14px 22px;
+      padding: 10px 12px 10px 18px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 18px;
+      gap: 22px;
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: 18px;
+      background: rgba(4,16,52,.78);
+      box-shadow: 0 16px 50px rgba(0,8,35,.28);
+      backdrop-filter: blur(18px);
     }
     .brand {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      font-weight: 800;
-      letter-spacing: -.02em;
+      font-weight: 900;
+      letter-spacing: -.04em;
       text-decoration: none;
     }
     .brand-mark {
-      width: 34px;
-      height: 34px;
+      width: 38px;
+      height: 38px;
       display: grid;
       place-items: center;
-      border-radius: 8px;
-      color: var(--white);
-      background: linear-gradient(135deg, var(--brand), var(--brand-2));
-      box-shadow: 0 10px 22px rgba(23,107,135,.22);
+      border-radius: 12px;
+      color: var(--navy-950);
+      background: linear-gradient(135deg, var(--yellow), var(--lime));
+      box-shadow: 0 8px 26px rgba(141,245,0,.24);
     }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      font-size: .88rem;
-      color: var(--ink-soft);
-    }
-    .nav-links a {
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .nav-cta,
-    .btn-primary,
-    .btn-secondary,
-    .model-link {
+    .nav-links { display: flex; align-items: center; gap: 24px; font-size: .86rem; color: rgba(255,255,255,.76); }
+    .nav-links a { text-decoration: none; font-weight: 700; transition: color .2s ease; }
+    .nav-links a:hover { color: var(--lime); }
+    .nav-cta, .btn-primary, .btn-secondary, .service-cta, .demo-link {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 9px;
-      min-height: 44px;
-      border-radius: 8px;
-      font-weight: 800;
+      border: 0;
       text-decoration: none;
-      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+      font-weight: 900;
+      transition: transform .22s ease, box-shadow .22s ease;
     }
     .nav-cta {
-      min-height: 40px;
-      padding: 0 16px;
-      color: var(--white);
-      background: var(--dark);
+      min-height: 42px;
+      padding: 0 17px;
+      border-radius: 12px;
+      color: var(--navy-950);
+      background: var(--lime);
+      font-size: .85rem;
     }
-    .nav-cta:hover,
-    .btn-primary:hover,
-    .btn-secondary:hover,
-    .model-link:hover {
-      transform: translateY(-2px);
-    }
+    .nav-cta:hover, .btn-primary:hover, .btn-secondary:hover, .service-cta:hover, .demo-link:hover { transform: translateY(-3px); }
 
     .hero {
-      min-height: 92vh;
-      padding: 120px 22px 64px;
       position: relative;
+      min-height: 920px;
+      padding: 132px 22px 92px;
       display: flex;
       align-items: center;
-      color: var(--white);
       overflow: hidden;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 82% 22%, rgba(7,90,245,.48), transparent 28%),
+        radial-gradient(circle at 8% 75%, rgba(0,136,255,.28), transparent 24%),
+        linear-gradient(145deg, var(--navy-950), var(--navy-900) 55%, #07245e);
     }
     .hero::before {
       content: "";
       position: absolute;
       inset: 0;
-      background:
-        linear-gradient(90deg, rgba(12,18,28,.92) 0%, rgba(12,18,28,.73) 48%, rgba(12,18,28,.34) 100%),
-        url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1800&q=82&auto=format&fit=crop") center/cover;
-      transform: scale(1.02);
+      opacity: .16;
+      background-image: linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);
+      background-size: 54px 54px;
+      mask-image: linear-gradient(to bottom, black, transparent 88%);
     }
     .hero::after {
       content: "";
       position: absolute;
-      inset: auto 0 0;
-      height: 110px;
-      background: linear-gradient(180deg, transparent, var(--paper));
+      left: -8%;
+      right: -8%;
+      bottom: -92px;
+      height: 150px;
+      border-radius: 50% 50% 0 0;
+      background: var(--paper);
     }
     .hero-inner {
       position: relative;
@@ -141,623 +153,491 @@
       width: 100%;
       max-width: 1180px;
       margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      gap: 64px;
+      align-items: center;
     }
     .eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      padding: 8px 12px;
-      border: 1px solid rgba(255,255,255,.22);
-      border-radius: 8px;
-      background: rgba(255,255,255,.08);
-      color: rgba(255,255,255,.82);
-      font-size: .78rem;
-      font-weight: 800;
-      letter-spacing: .08em;
+      gap: 9px;
+      padding: 9px 13px;
+      border: 1px solid rgba(141,245,0,.3);
+      border-radius: 999px;
+      background: rgba(141,245,0,.09);
+      color: var(--lime);
+      font-size: .75rem;
+      font-weight: 900;
+      letter-spacing: .09em;
       text-transform: uppercase;
     }
     .eyebrow::before {
       content: "";
       width: 8px;
       height: 8px;
-      border-radius: 999px;
-      background: var(--brand-2);
-      box-shadow: 0 0 0 5px rgba(34,166,153,.18);
+      border-radius: 50%;
+      background: var(--lime);
+      box-shadow: 0 0 0 5px rgba(141,245,0,.12);
     }
     h1 {
-      max-width: 780px;
+      max-width: 720px;
       margin-top: 22px;
-      font-size: clamp(2.7rem, 7vw, 6.4rem);
-      line-height: .95;
-      letter-spacing: -.055em;
-      font-weight: 800;
+      font-size: clamp(3rem, 6.2vw, 5.7rem);
+      line-height: .94;
+      letter-spacing: -.064em;
+      font-weight: 900;
+      text-wrap: balance;
     }
-    .hero-copy {
-      max-width: 650px;
-      margin-top: 24px;
-      color: rgba(255,255,255,.78);
-      font-size: clamp(1rem, 1.7vw, 1.22rem);
-      line-height: 1.75;
+    h1 em { color: var(--yellow); font-style: normal; text-shadow: 0 8px 34px rgba(255,196,0,.16); }
+    .hero-copy { max-width: 650px; margin-top: 24px; color: rgba(255,255,255,.76); font-size: clamp(1rem,1.45vw,1.15rem); line-height: 1.72; }
+    .hero-copy strong { color: var(--white); }
+    .hero-actions { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 13px; }
+    .btn-primary, .btn-secondary { min-height: 56px; padding: 0 24px; border-radius: 15px; }
+    .btn-primary { color: var(--navy-950); background: linear-gradient(135deg, var(--lime), #58db00); box-shadow: 0 18px 40px rgba(109,224,0,.24); }
+    .btn-primary:hover { box-shadow: 0 22px 50px rgba(109,224,0,.34); }
+    .btn-secondary { color: var(--white); border: 1px solid rgba(255,255,255,.2); background: rgba(255,255,255,.08); backdrop-filter: blur(10px); }
+    .btn-icon { width: 22px; height: 22px; flex: 0 0 auto; }
+    .micro-proof { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 8px 18px; color: rgba(255,255,255,.64); font-size: .79rem; font-weight: 700; }
+    .micro-proof span::before { content: "✓"; margin-right: 7px; color: var(--lime); font-weight: 900; }
+
+    .hero-visual { position: relative; min-height: 580px; display: grid; place-items: center; }
+    .orbit {
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      border: 1px solid rgba(255,255,255,.11);
+      border-radius: 50%;
+      animation: spin 26s linear infinite;
     }
-    .hero-actions {
-      margin-top: 34px;
-      display: flex;
-      flex-wrap: wrap;
+    .orbit::before, .orbit::after {
+      content: "";
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--lime);
+      box-shadow: 0 0 22px rgba(141,245,0,.8);
+    }
+    .orbit::before { top: 48px; left: 82px; }
+    .orbit::after { right: 12px; bottom: 130px; background: var(--yellow); }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .control-panel {
+      position: relative;
+      z-index: 2;
+      width: min(100%,470px);
+      padding: 22px;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 28px;
+      background: linear-gradient(160deg, rgba(255,255,255,.15), rgba(255,255,255,.055));
+      box-shadow: 0 34px 80px rgba(0,7,31,.44);
+      backdrop-filter: blur(18px);
+      transform: rotate(1.5deg);
+    }
+    .panel-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 17px; color: rgba(255,255,255,.65); font-size: .75rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+    .panel-dots { display: flex; gap: 6px; }
+    .panel-dots i { width: 8px; height: 8px; border-radius: 50%; background: var(--red); }
+    .panel-dots i:nth-child(2) { background: var(--yellow); }
+    .panel-dots i:nth-child(3) { background: var(--lime); }
+    .solution-mini {
+      position: relative;
+      display: grid;
+      grid-template-columns: 54px 1fr auto;
       gap: 14px;
-    }
-    .btn-primary {
-      padding: 0 24px;
-      color: var(--dark);
-      background: var(--accent);
-      box-shadow: 0 16px 35px rgba(242,165,65,.25);
-    }
-    .btn-secondary {
-      padding: 0 22px;
-      color: var(--white);
-      border: 1px solid rgba(255,255,255,.28);
-      background: rgba(255,255,255,.08);
-    }
-    .hero-proof {
-      max-width: 720px;
-      margin-top: 34px;
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-    }
-    .proof-item {
-      padding: 14px 16px;
-      border: 1px solid rgba(255,255,255,.14);
-      border-radius: 8px;
-      background: rgba(255,255,255,.08);
-      backdrop-filter: blur(10px);
-    }
-    .proof-item strong {
-      display: block;
-      font-size: 1.1rem;
-    }
-    .proof-item span {
-      display: block;
-      margin-top: 3px;
-      color: rgba(255,255,255,.66);
-      font-size: .82rem;
-      line-height: 1.45;
-    }
-
-    .section {
-      padding: 84px 22px;
-    }
-    .section.alt { background: var(--paper-2); }
-    .wrap {
-      max-width: 1180px;
-      margin: 0 auto;
-    }
-    .section-head {
-      max-width: 720px;
-      margin-bottom: 34px;
-    }
-    .tag {
-      display: inline-block;
-      color: var(--brand);
-      font-size: .78rem;
-      font-weight: 800;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-    h2 {
-      font-size: clamp(2rem, 4vw, 3.4rem);
-      line-height: 1.05;
-      letter-spacing: -.04em;
-      font-weight: 800;
-    }
-    .section-head p {
-      margin-top: 14px;
-      color: var(--ink-soft);
-      line-height: 1.75;
-      font-size: 1rem;
-    }
-
-    .included-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-    }
-    .included {
-      min-height: 188px;
-      padding: 24px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: var(--panel);
-      box-shadow: 0 8px 28px rgba(15,23,32,.05);
-    }
-    .included-icon {
-      width: 42px;
-      height: 42px;
-      display: grid;
-      place-items: center;
-      border-radius: 8px;
-      color: var(--white);
-      background: var(--brand);
-      margin-bottom: 18px;
-    }
-    .included:nth-child(2) .included-icon,
-    .included:nth-child(5) .included-icon { background: var(--brand-2); }
-    .included:nth-child(3) .included-icon,
-    .included:nth-child(6) .included-icon { background: var(--rose); }
-    .included h3 {
-      font-size: 1.02rem;
-      margin-bottom: 8px;
-    }
-    .included p {
-      color: var(--ink-soft);
-      line-height: 1.65;
-      font-size: .92rem;
-    }
-
-    .pitch {
-      display: grid;
-      grid-template-columns: .9fr 1.1fr;
-      gap: 34px;
       align-items: center;
-    }
-    .pitch-visual {
-      min-height: 430px;
-      border-radius: 8px;
-      background:
-        linear-gradient(180deg, rgba(15,23,32,.08), rgba(15,23,32,.55)),
-        url("https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1200&q=82&auto=format&fit=crop") center/cover;
-      box-shadow: var(--shadow);
-    }
-    .steps {
-      display: grid;
-      gap: 14px;
-    }
-    .step {
-      display: grid;
-      grid-template-columns: 48px 1fr;
-      gap: 16px;
-      padding: 18px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: var(--panel);
-    }
-    .step-num {
-      width: 48px;
-      height: 48px;
-      display: grid;
-      place-items: center;
-      border-radius: 8px;
-      background: var(--dark);
-      color: var(--white);
-      font-weight: 800;
-    }
-    .step h3 { margin-bottom: 5px; font-size: 1rem; }
-    .step p {
-      color: var(--ink-soft);
-      line-height: 1.6;
-      font-size: .92rem;
-    }
-
-    .models-grid {
-      display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 16px;
-    }
-    .model {
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: var(--panel);
-      box-shadow: 0 10px 28px rgba(15,23,32,.06);
-    }
-    .model-img {
-      height: 150px;
-      background: var(--paper-2);
-      overflow: hidden;
-    }
-    .model-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform .35s ease;
-    }
-    .model:hover .model-img img { transform: scale(1.05); }
-    .model-body {
       padding: 16px;
+      margin-top: 11px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: 18px;
+      background: rgba(2,8,31,.58);
     }
-    .model-type {
-      color: var(--brand);
-      font-size: .72rem;
-      font-weight: 800;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-    .model h3 {
-      font-size: .98rem;
-      line-height: 1.3;
-      margin-bottom: 8px;
-    }
-    .model p {
-      min-height: 66px;
-      color: var(--ink-soft);
-      font-size: .84rem;
-      line-height: 1.55;
-    }
-    .model-link {
-      width: 100%;
-      margin-top: 14px;
-      min-height: 40px;
-      color: var(--dark);
-      border: 1px solid var(--line);
-      background: var(--paper);
-      font-size: .86rem;
-    }
+    .solution-mini::after { content: ""; position: absolute; inset: auto 0 0; height: 3px; background: var(--blue-light); }
+    .solution-mini:nth-of-type(3)::after { background: var(--green); }
+    .solution-mini:nth-of-type(4)::after { background: var(--purple); }
+    .mini-icon { width: 54px; height: 54px; display: grid; place-items: center; border-radius: 16px; color: var(--white); background: linear-gradient(135deg,var(--blue),var(--blue-light)); }
+    .solution-mini:nth-of-type(3) .mini-icon { background: linear-gradient(135deg,#0b9f43,var(--green)); }
+    .solution-mini:nth-of-type(4) .mini-icon { background: linear-gradient(135deg,#5320b8,var(--purple)); }
+    .mini-icon svg { width: 28px; height: 28px; }
+    .solution-mini strong { display: block; font-size: .94rem; }
+    .solution-mini small { display: block; margin-top: 4px; color: rgba(255,255,255,.58); line-height: 1.4; }
+    .status { padding: 6px 8px; border-radius: 999px; color: var(--lime); background: rgba(141,245,0,.11); font-size: .66rem; font-weight: 900; text-transform: uppercase; }
+    .panel-score { margin-top: 15px; padding: 17px; display: flex; align-items: center; justify-content: space-between; gap: 16px; border-radius: 18px; color: var(--navy-950); background: linear-gradient(135deg,var(--yellow),#ffdb46); }
+    .panel-score span { font-size: .78rem; font-weight: 800; }
+    .panel-score strong { font-size: 1.4rem; letter-spacing: -.04em; }
 
-    .price-band {
-      padding: 34px;
+    .benefit-strip {
+      position: relative;
+      z-index: 4;
+      width: min(calc(100% - 44px),1120px);
+      margin: -64px auto 0;
+      padding: 22px 28px;
       display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 22px;
-      align-items: center;
-      border-radius: 8px;
-      background: var(--dark);
-      color: var(--white);
+      grid-template-columns: repeat(5,1fr);
+      gap: 1px;
+      border: 1px solid rgba(7,21,54,.08);
+      border-radius: 24px;
+      background: var(--white);
       box-shadow: var(--shadow);
     }
-    .price-band h2 {
-      font-size: clamp(1.8rem, 3vw, 3rem);
-    }
-    .price-band p {
-      max-width: 720px;
-      margin-top: 10px;
-      color: rgba(255,255,255,.72);
-      line-height: 1.7;
-    }
-    .price-list {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 22px;
-    }
-    .price-list span {
-      padding: 12px;
-      border-radius: 8px;
-      background: rgba(255,255,255,.08);
-      color: rgba(255,255,255,.82);
-      font-size: .9rem;
-      font-weight: 700;
-    }
-    .price-action {
-      white-space: nowrap;
-    }
+    .benefit { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 8px 12px; border-right: 1px solid var(--line); font-size: .82rem; font-weight: 900; text-transform: uppercase; }
+    .benefit:last-child { border-right: 0; }
+    .benefit i { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; color: var(--white); background: var(--blue); font-style: normal; }
+    .benefit:nth-child(2) i { background: var(--green); }
+    .benefit:nth-child(3) i { background: #ff8a00; }
+    .benefit:nth-child(4) i { background: var(--purple); }
+    .benefit:nth-child(5) i { background: #ed2e83; }
 
-    .final {
-      padding: 92px 22px;
-      color: var(--white);
-      background:
-        linear-gradient(90deg, rgba(23,107,135,.94), rgba(15,23,32,.92)),
-        url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1600&q=82&auto=format&fit=crop") center/cover;
-      text-align: center;
-    }
-    .final h2 {
-      max-width: 820px;
-      margin: 0 auto;
-    }
-    .final p {
-      max-width: 660px;
-      margin: 16px auto 28px;
-      color: rgba(255,255,255,.76);
-      line-height: 1.75;
-    }
+    .section { padding: 104px 22px; }
+    .section.compact { padding-top: 74px; }
+    .section.dark { color: var(--white); background: radial-gradient(circle at 15% 15%,rgba(7,90,245,.28),transparent 26%), var(--navy-950); }
+    .wrap { max-width: 1180px; margin: 0 auto; }
+    .section-head { max-width: 760px; margin-bottom: 42px; }
+    .section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+    .tag { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 14px; color: var(--blue); font-size: .76rem; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+    .tag::before { content: ""; width: 22px; height: 3px; border-radius: 10px; background: currentColor; }
+    .dark .tag { color: var(--lime); }
+    h2 { font-size: clamp(2.2rem,4.5vw,4.2rem); line-height: 1.01; letter-spacing: -.055em; font-weight: 900; text-wrap: balance; }
+    .section-head p { margin-top: 16px; color: var(--muted); font-size: 1.04rem; line-height: 1.72; }
+    .dark .section-head p { color: rgba(255,255,255,.65); }
 
-    footer {
-      padding: 26px 22px;
-      background: var(--dark);
-      color: rgba(255,255,255,.62);
-    }
-    .footer-inner {
-      max-width: 1180px;
-      margin: 0 auto;
+    .problem-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 15px; }
+    .problem-card { min-height: 188px; padding: 24px; border: 1px solid var(--line); border-radius: 22px; background: rgba(255,255,255,.72); box-shadow: 0 12px 40px rgba(7,21,54,.06); transition: transform .22s ease, box-shadow .22s ease; }
+    .problem-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(7,21,54,.11); }
+    .problem-number { width: 40px; height: 40px; display: grid; place-items: center; margin-bottom: 25px; border-radius: 12px; color: var(--white); background: var(--red); font-weight: 900; }
+    .problem-card h3 { font-size: 1rem; line-height: 1.38; letter-spacing: -.02em; }
+    .problem-card p { margin-top: 9px; color: var(--muted); font-size: .88rem; line-height: 1.6; }
+
+    .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .service-card {
+      position: relative;
+      min-height: 470px;
+      padding: 28px;
       display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
-      font-size: .88rem;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 26px;
+      background: linear-gradient(155deg,rgba(255,255,255,.11),rgba(255,255,255,.035));
+      box-shadow: 0 24px 58px rgba(0,8,34,.24);
+      transition: transform .25s ease, border-color .25s ease;
     }
+    .service-card:hover { transform: translateY(-8px); border-color: rgba(141,245,0,.32); }
+    .service-card::after { content: ""; position: absolute; width: 180px; height: 180px; right: -70px; top: -70px; border-radius: 50%; background: var(--blue); opacity: .16; }
+    .service-card:nth-child(2)::after { background: var(--green); }
+    .service-card:nth-child(3)::after { background: var(--purple); }
+    .service-index { color: rgba(255,255,255,.22); font-size: 3.8rem; line-height: 1; font-weight: 900; letter-spacing: -.07em; }
+    .service-icon { width: 66px; height: 66px; display: grid; place-items: center; margin: 24px 0 22px; border-radius: 19px; color: var(--white); background: linear-gradient(135deg,var(--blue),var(--blue-light)); box-shadow: 0 18px 40px rgba(7,90,245,.28); }
+    .service-card:nth-child(2) .service-icon { background: linear-gradient(135deg,#0c9e44,var(--green)); }
+    .service-card:nth-child(3) .service-icon { background: linear-gradient(135deg,#5422b9,var(--purple)); }
+    .service-icon svg { width: 34px; height: 34px; }
+    .service-card h3 { font-size: 1.45rem; letter-spacing: -.035em; }
+    .service-promise { margin-top: 7px; color: var(--lime); font-size: .86rem; font-weight: 900; text-transform: uppercase; }
+    .service-card p { margin-top: 15px; color: rgba(255,255,255,.63); font-size: .93rem; line-height: 1.66; }
+    .service-list { margin: 20px 0 24px; display: grid; gap: 9px; list-style: none; }
+    .service-list li { color: rgba(255,255,255,.84); font-size: .86rem; font-weight: 700; }
+    .service-list li::before { content: "✓"; margin-right: 8px; color: var(--lime); }
+    .service-cta { width: 100%; min-height: 48px; margin-top: auto; border-radius: 14px; color: var(--navy-950); background: var(--white); font-size: .87rem; }
+
+    .activation { display: grid; grid-template-columns: .85fr 1.15fr; gap: 64px; align-items: center; }
+    .activation-visual { position: relative; min-height: 500px; padding: 35px; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; border-radius: 30px; color: var(--white); background: radial-gradient(circle at 72% 20%,rgba(141,245,0,.26),transparent 22%),linear-gradient(145deg,#0745c2,var(--navy-900)); box-shadow: var(--shadow); }
+    .activation-visual::before { content: ""; position: absolute; width: 330px; height: 330px; top: -120px; right: -100px; border: 40px solid rgba(255,255,255,.06); border-radius: 50%; }
+    .rocket { position: absolute; top: 64px; left: 50%; width: 140px; height: 140px; display: grid; place-items: center; border-radius: 34px; color: var(--navy-950); background: linear-gradient(135deg,var(--yellow),var(--lime)); box-shadow: 0 30px 80px rgba(141,245,0,.28); transform: translateX(-50%) rotate(-7deg); }
+    .rocket svg { width: 76px; height: 76px; }
+    .activation-visual small { position: relative; z-index: 2; color: var(--lime); font-weight: 900; text-transform: uppercase; letter-spacing: .12em; }
+    .activation-visual strong { position: relative; z-index: 2; max-width: 390px; margin-top: 9px; font-size: 2rem; line-height: 1.08; letter-spacing: -.04em; }
+    .steps { display: grid; gap: 14px; }
+    .step { display: grid; grid-template-columns: 54px 1fr; gap: 17px; padding: 20px; border: 1px solid var(--line); border-radius: 20px; background: var(--white); box-shadow: 0 10px 34px rgba(7,21,54,.055); }
+    .step-num { width: 54px; height: 54px; display: grid; place-items: center; border-radius: 16px; color: var(--white); background: var(--blue); font-weight: 900; }
+    .step h3 { margin-bottom: 5px; font-size: 1rem; }
+    .step p { color: var(--muted); font-size: .9rem; line-height: 1.6; }
+
+    .demos-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 15px; }
+    .demo { padding: 18px; display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: 21px; background: var(--white); box-shadow: 0 12px 35px rgba(7,21,54,.06); transition: transform .22s ease; }
+    .demo:hover { transform: translateY(-6px); }
+    .demo-icon { width: 48px; height: 48px; display: grid; place-items: center; margin-bottom: 22px; border-radius: 15px; color: var(--blue); background: rgba(7,90,245,.09); font-weight: 900; }
+    .demo-type { color: var(--blue); font-size: .68rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+    .demo h3 { min-height: 48px; margin-top: 7px; font-size: .92rem; line-height: 1.35; }
+    .demo p { margin: 10px 0 18px; color: var(--muted); font-size: .78rem; line-height: 1.55; }
+    .demo-link { min-height: 40px; margin-top: auto; border-radius: 12px; color: var(--ink); background: var(--paper); font-size: .78rem; }
+
+    .offer { position: relative; padding: 46px; display: grid; grid-template-columns: 1fr auto; gap: 38px; align-items: center; overflow: hidden; border-radius: 30px; color: var(--white); background: linear-gradient(110deg,#ed1d16 0%,#ff3b12 44%,var(--yellow) 44.2%,#ffd52d 100%); box-shadow: 0 28px 70px rgba(211,39,14,.22); }
+    .offer::before { content: ""; position: absolute; width: 260px; height: 260px; right: 15%; top: -160px; border-radius: 50%; border: 34px solid rgba(255,255,255,.14); }
+    .offer-copy, .offer-action { position: relative; z-index: 2; }
+    .offer-label { display: inline-block; padding: 7px 10px; border-radius: 8px; background: rgba(0,0,0,.14); font-size: .72rem; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+    .offer h2 { max-width: 620px; margin-top: 12px; font-size: clamp(2rem,4vw,3.8rem); }
+    .offer p { max-width: 630px; margin-top: 12px; color: rgba(255,255,255,.83); line-height: 1.65; }
+    .offer-action { text-align: center; color: var(--navy-950); }
+    .offer-action .btn-primary { min-width: 235px; color: var(--white); background: var(--navy-950); box-shadow: 0 18px 46px rgba(2,8,31,.28); }
+    .offer-deadline { display: block; margin-top: 10px; font-size: .72rem; font-weight: 800; }
+
+    .faq-list { max-width: 900px; margin: 0 auto; display: grid; gap: 12px; }
+    details { border: 1px solid var(--line); border-radius: 18px; background: var(--white); box-shadow: 0 9px 30px rgba(7,21,54,.045); }
+    summary { position: relative; padding: 21px 54px 21px 22px; cursor: pointer; list-style: none; font-weight: 800; line-height: 1.4; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; position: absolute; right: 21px; top: 50%; color: var(--blue); font-size: 1.4rem; transform: translateY(-50%); }
+    details[open] summary::after { content: "−"; }
+    .faq-answer { padding: 0 22px 22px; color: var(--muted); font-size: .92rem; line-height: 1.7; }
+    .faq-answer a { color: var(--blue); font-weight: 800; }
+
+    .final { position: relative; padding: 112px 22px; overflow: hidden; color: var(--white); text-align: center; background: radial-gradient(circle at 50% 0%,rgba(7,90,245,.52),transparent 42%),var(--navy-950); }
+    .final::before, .final::after { content: ""; position: absolute; width: 340px; height: 340px; border: 1px solid rgba(255,255,255,.08); border-radius: 50%; }
+    .final::before { left: -170px; bottom: -170px; }
+    .final::after { right: -170px; top: -170px; }
+    .final .wrap { position: relative; z-index: 2; }
+    .final h2 { max-width: 820px; margin: 0 auto; }
+    .final h2 span { color: var(--lime); }
+    .final p { max-width: 670px; margin: 18px auto 30px; color: rgba(255,255,255,.68); line-height: 1.72; }
+    footer { padding: 27px 22px; color: rgba(255,255,255,.58); background: #010617; }
+    .footer-inner { max-width: 1180px; margin: 0 auto; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: .82rem; }
     footer strong { color: var(--white); }
+    .wa-float { position: fixed; right: 20px; bottom: 20px; z-index: 95; min-height: 56px; padding: 0 19px; display: inline-flex; align-items: center; gap: 10px; border: 2px solid rgba(255,255,255,.62); border-radius: 999px; color: var(--white); background: var(--green); box-shadow: 0 18px 42px rgba(33,198,91,.38); text-decoration: none; font-weight: 900; transition: transform .22s ease; }
+    .wa-float:hover { transform: translateY(-4px) scale(1.02); }
+    .wa-float svg { width: 25px; height: 25px; }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .65s ease, transform .65s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
 
-    .wa-float {
-      position: fixed;
-      right: 22px;
-      bottom: 22px;
-      z-index: 80;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      min-height: 52px;
-      padding: 0 18px;
-      border-radius: 999px;
-      color: var(--white);
-      background: #25d366;
-      font-weight: 800;
-      text-decoration: none;
-      box-shadow: 0 14px 34px rgba(37,211,102,.34);
-      transition: transform .2s ease, box-shadow .2s ease;
+    @media (max-width: 1080px) {
+      .hero-inner { grid-template-columns: 1fr 400px; gap: 38px; }
+      .orbit { width: 440px; height: 440px; }
+      .benefit-strip { grid-template-columns: repeat(3,1fr); }
+      .benefit:nth-child(3) { border-right: 0; }
+      .problem-grid { grid-template-columns: repeat(2,1fr); }
+      .demos-grid { grid-template-columns: repeat(3,1fr); }
     }
-    .wa-float:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 18px 42px rgba(37,211,102,.44);
-    }
-    .wa-float svg {
-      width: 22px;
-      height: 22px;
-      flex: 0 0 auto;
-    }
-
-    @media (max-width: 1050px) {
-      .models-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .included-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-    @media (max-width: 780px) {
+    @media (max-width: 840px) {
       .nav-links { display: none; }
-      .hero { min-height: auto; padding-top: 112px; }
-      .hero-proof,
-      .included-grid,
-      .pitch,
-      .price-list,
-      .price-band {
-        grid-template-columns: 1fr;
-      }
-      .models-grid { grid-template-columns: 1fr; }
-      .price-action { white-space: normal; }
-      .section { padding: 64px 18px; }
-      .wa-float {
-        width: 56px;
-        height: 56px;
-        min-height: 56px;
-        padding: 0;
-        justify-content: center;
-        font-size: 0;
-      }
-      .wa-float svg {
-        width: 25px;
-        height: 25px;
-      }
+      .hero { min-height: auto; padding-top: 126px; padding-bottom: 126px; }
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-visual { min-height: 520px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .service-card { min-height: 0; }
+      .activation { grid-template-columns: 1fr; gap: 40px; }
+      .activation-visual { min-height: 460px; }
+      .offer { grid-template-columns: 1fr; background: linear-gradient(145deg,#ed1d16 0%,#ff3b12 64%,var(--yellow) 64.3%,#ffd52d 100%); }
+      .offer-action { text-align: left; }
+    }
+    @media (max-width: 620px) {
+      .topbar { padding: 8px; }
+      .nav { min-height: 58px; padding: 8px 8px 8px 13px; border-radius: 15px; }
+      .brand-mark { width: 34px; height: 34px; border-radius: 10px; }
+      .nav-cta { min-height: 39px; padding: 0 12px; font-size: .76rem; }
+      .hero { padding: 108px 18px 116px; }
+      h1 { font-size: clamp(2.7rem,14.2vw,4.2rem); }
+      .hero-actions { display: grid; }
+      .btn-primary, .btn-secondary { width: 100%; }
+      .hero-visual { min-height: 470px; }
+      .control-panel { padding: 15px; border-radius: 23px; transform: none; }
+      .solution-mini { grid-template-columns: 48px 1fr; padding: 13px; }
+      .mini-icon { width: 48px; height: 48px; }
+      .status { display: none; }
+      .orbit { width: 380px; height: 380px; }
+      .benefit-strip { width: calc(100% - 28px); padding: 15px; grid-template-columns: 1fr 1fr; }
+      .benefit { justify-content: flex-start; border-right: 0; padding: 9px 6px; font-size: .71rem; }
+      .benefit:last-child { grid-column: 1 / -1; justify-content: center; }
+      .section { padding: 78px 17px; }
+      .section.compact { padding-top: 56px; }
+      .problem-grid, .demos-grid { grid-template-columns: 1fr; }
+      .problem-card { min-height: 0; }
+      .demo h3 { min-height: 0; }
+      .activation-visual { min-height: 420px; padding: 25px; }
+      .step { grid-template-columns: 46px 1fr; padding: 17px; }
+      .step-num { width: 46px; height: 46px; }
+      .offer { padding: 30px 22px 110px; }
+      .offer-action .btn-primary { min-width: 0; width: 100%; }
+      .wa-float { width: 58px; height: 58px; min-height: 58px; padding: 0; justify-content: center; font-size: 0; }
+      .footer-inner { flex-direction: column; text-align: center; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
     }
   </style>
 </head>
 <body>
-  <div class="topbar">
-    <nav class="nav" aria-label="Principal">
-      <a class="brand" href="#">
-        <span class="brand-mark">M</span>
-        <span>MiPagina.pe</span>
-      </a>
-      <div class="nav-links">
-        <a href="#incluye">Incluye</a>
-        <a href="#modelos">Modelos</a>
-        <a href="#proceso">Proceso</a>
-      </div>
-      <a class="nav-cta" href="https://wa.me/51912618048" target="_blank" rel="noopener">Cotizar</a>
+  <div class="progress" aria-hidden="true"></div>
+  <header class="topbar">
+    <nav class="nav" aria-label="Navegación principal">
+      <a class="brand" href="#inicio" aria-label="MiPagina.pe - Inicio"><span class="brand-mark">M</span><span>MiPagina.pe</span></a>
+      <div class="nav-links"><a href="#soluciones">Soluciones</a><a href="#proceso">Cómo funciona</a><a href="#demos">Demos</a><a href="#preguntas">Preguntas</a></div>
+      <a class="nav-cta" href="https://wa.me/51912618048?text=Hola%2C%20vi%20tu%20web%20y%20quiero%20activar%20mi%20negocio.%20%C2%BFMe%20cuentas%20c%C3%B3mo%20empezamos%3F" target="_blank" rel="noopener">Activar mi negocio</a>
     </nav>
-  </div>
+  </header>
 
   <main>
-    <section class="hero">
+    <section class="hero" id="inicio">
       <div class="hero-inner">
-        <span class="eyebrow">Diseno web para negocios locales</span>
-        <h1>Tu negocio con pagina web, dominio y hosting incluidos.</h1>
-        <p class="hero-copy">Creo paginas web profesionales para barberias, clinicas, consultorios, estudios y negocios locales que quieren recibir mas consultas por WhatsApp y verse serios desde el primer clic.</p>
-        <div class="hero-actions">
-          <a class="btn-primary" href="https://wa.me/51912618048" target="_blank" rel="noopener">Quiero mi pagina</a>
-          <a class="btn-secondary" href="#modelos">Ver modelos</a>
-        </div>
-        <div class="hero-proof" aria-label="Resumen del servicio">
-          <div class="proof-item">
-            <strong>Dominio</strong>
-            <span>Nombre propio para tu web, sin enlaces raros.</span>
-          </div>
-          <div class="proof-item">
-            <strong>Hosting</strong>
-            <span>Publicacion incluida para que tu pagina este online.</span>
-          </div>
-          <div class="proof-item">
-            <strong>WhatsApp</strong>
-            <span>Botones listos para convertir visitas en contactos.</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="incluye">
-      <div class="wrap">
-        <div class="section-head">
-          <span class="tag">Servicio completo</span>
-          <h2>No solo diseno una pagina: te la dejo publicada.</h2>
-          <p>La idea es simple: tu negocio necesita una presencia web que se vea profesional, cargue bien en celular y lleve al cliente directo a escribirte.</p>
-        </div>
-        <div class="included-grid">
-          <article class="included">
-            <div class="included-icon">01</div>
-            <h3>Diseno web profesional</h3>
-            <p>Una pagina visualmente cuidada, adaptada al rubro de tu negocio y lista para mostrar servicios, confianza y ubicacion.</p>
-          </article>
-          <article class="included">
-            <div class="included-icon">02</div>
-            <h3>Dominio personalizado</h3>
-            <p>Configuro el dominio para que puedas compartir una URL clara y seria con tus clientes.</p>
-          </article>
-          <article class="included">
-            <div class="included-icon">03</div>
-            <h3>Hosting incluido</h3>
-            <p>Tu web queda publicada y accesible sin que tengas que pelearte con servidores ni configuraciones.</p>
-          </article>
-          <article class="included">
-            <div class="included-icon">04</div>
-            <h3>Contacto por WhatsApp</h3>
-            <p>Botones visibles para que los visitantes pidan cita, consulta o informacion sin friccion.</p>
-          </article>
-          <article class="included">
-            <div class="included-icon">05</div>
-            <h3>Mapa y datos del negocio</h3>
-            <p>Direccion, distrito, telefono, resenas y mapa de Google para reforzar confianza local.</p>
-          </article>
-          <article class="included">
-            <div class="included-icon">06</div>
-            <h3>Version celular</h3>
-            <p>La pagina se ve bien en telefonos, que es donde la mayoria de clientes va a abrir tu enlace.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section alt" id="proceso">
-      <div class="wrap pitch">
-        <div class="pitch-visual" aria-hidden="true"></div>
         <div>
-          <div class="section-head">
-            <span class="tag">Proceso</span>
-            <h2>De tus datos a una web publicada.</h2>
-            <p>Trabajo con un flujo directo para que no pierdas tiempo. Me pasas la informacion principal y yo preparo la pagina.</p>
+          <span class="eyebrow">Oferta emprendedor · Digitalización con IA</span>
+          <h1>¿Tu negocio no vende más porque <em>no te encuentran</em> o respondes tarde?</h1>
+          <p class="hero-copy">Ponemos tu <strong>página web, Google y WhatsApp</strong> a trabajar juntos para que tu negocio local gane visibilidad, responda más rápido y convierta consultas en citas.</p>
+          <div class="hero-actions">
+            <a class="btn-primary" href="https://wa.me/51912618048?text=Hola%2C%20quiero%20digitalizar%20mi%20negocio%20con%20la%20Oferta%20Emprendedor.%20Mi%20rubro%20es%3A%20" target="_blank" rel="noopener">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.116.549 4.107 1.51 5.84L.057 23.882l6.204-1.626A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.376l-.36-.214-3.681.965.981-3.595-.235-.369A9.818 9.818 0 1112 21.818z"/></svg>
+              Escríbeme y activa tu negocio
+            </a>
+            <a class="btn-secondary" href="#soluciones">Ver las 3 soluciones</a>
           </div>
+          <div class="micro-proof" aria-label="Ventajas del servicio"><span>Atención rápida</span><span>Soluciones accesibles</span><span>Listo para vender</span></div>
+        </div>
+
+        <div class="hero-visual" aria-label="Panel con las soluciones para digitalizar tu negocio">
+          <div class="orbit" aria-hidden="true"></div>
+          <div class="control-panel">
+            <div class="panel-top"><span class="panel-dots" aria-hidden="true"><i></i><i></i><i></i></span><span>Tu negocio digital</span></div>
+            <div class="solution-mini">
+              <div class="mini-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 8h18M7 12h4M7 16h8"/></svg></div>
+              <div><strong>Página web con IA</strong><small>Profesional y enfocada en vender</small></div><span class="status">Activa</span>
+            </div>
+            <div class="solution-mini">
+              <div class="mini-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s7-4.35 7-11a7 7 0 10-14 0c0 6.65 7 11 7 11z"/><circle cx="12" cy="10" r="2.3"/></svg></div>
+              <div><strong>Posicionamiento local</strong><small>Google, Maps y más visibilidad</small></div><span class="status">Visible</span>
+            </div>
+            <div class="solution-mini">
+              <div class="mini-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 5a3 3 0 013-3h10a3 3 0 013 3v8a3 3 0 01-3 3h-5l-5 4v-4a3 3 0 01-3-3V5z"/><path d="M8 8h8M8 12h5"/></svg></div>
+              <div><strong>Bot de WhatsApp</strong><small>Responde y agenda automáticamente</small></div><span class="status">Online</span>
+            </div>
+            <div class="panel-score"><span>Sistema conectado</span><strong>24/7</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="benefit-strip" aria-label="Resultados que busca la solución">
+      <div class="benefit"><i>+</i><span>Más clientes</span></div><div class="benefit"><i>◎</i><span>Más visibilidad</span></div><div class="benefit"><i>⚡</i><span>Más rapidez</span></div><div class="benefit"><i>⚙</i><span>Menos trabajo</span></div><div class="benefit"><i>◆</i><span>Accesible</span></div>
+    </div>
+
+    <section class="section compact" id="problemas">
+      <div class="wrap">
+        <div class="section-head center reveal"><span class="tag">¿Te está pasando?</span><h2>El cliente busca, compara y escribe. Si no apareces o tardas, elige a otro.</h2><p>Estos son los cuatro frenos que la nueva solución elimina para negocios que venden por cita, consulta o visita.</p></div>
+        <div class="problem-grid">
+          <article class="problem-card reveal"><div class="problem-number">01</div><h3>No me encuentran en internet</h3><p>Tu negocio existe, pero no aparece con claridad cuando alguien busca lo que vendes.</p></article>
+          <article class="problem-card reveal"><div class="problem-number">02</div><h3>Pierdo clientes por responder tarde</h3><p>Las consultas llegan, pero se enfrían mientras estás trabajando o fuera de horario.</p></article>
+          <article class="problem-card reveal"><div class="problem-number">03</div><h3>No tengo una web profesional</h3><p>Dependes de perfiles prestados y te falta un lugar propio que explique y convierta.</p></article>
+          <article class="problem-card reveal"><div class="problem-number">04</div><h3>No tengo tiempo para procesos largos</h3><p>Necesitas una solución concreta, accesible y sin semanas de reuniones técnicas.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark" id="soluciones">
+      <div class="wrap">
+        <div class="section-head center reveal"><span class="tag">Tres soluciones conectadas</span><h2>Digitaliza tu negocio rápido y a bajo costo con IA.</h2><p>Empieza por la solución que más necesitas o conecta las tres para tener presencia, visibilidad y respuesta automática.</p></div>
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <div class="service-index">01</div><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 8h18M7 12h4M7 16h8"/><path d="M17 12l.7 1.5 1.6.7-1.6.7-.7 1.6-.7-1.6-1.6-.7 1.6-.7z"/></svg></div>
+            <h3>Páginas web con IA</h3><div class="service-promise">Web profesional en 1 hora*</div><p>Una página clara, rápida y adaptada a tu rubro para mostrar servicios, generar confianza y llevar cada visita a WhatsApp.</p>
+            <ul class="service-list"><li>Diseño responsive</li><li>Dominio y hosting</li><li>Botones de conversión</li></ul>
+            <a class="service-cta" href="https://wa.me/51912618048?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20la%20p%C3%A1gina%20web%20con%20IA.%20Mi%20negocio%20es%3A%20" target="_blank" rel="noopener">Quiero mi página web</a>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-index">02</div><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s7-4.35 7-11a7 7 0 10-14 0c0 6.65 7 11 7 11z"/><circle cx="12" cy="10" r="2.4"/><path d="M16.5 3.7l2-2M18 6h3"/></svg></div>
+            <h3>Posicionamiento en Google</h3><div class="service-promise">SEO local + Google Maps</div><p>Optimiza tu presencia para que más personas de tu zona puedan descubrir tu negocio cuando buscan tus servicios.</p>
+            <ul class="service-list"><li>Presencia local clara</li><li>Google Maps optimizado</li><li>Base para ganar visibilidad</li></ul>
+            <a class="service-cta" href="https://wa.me/51912618048?text=Hola%2C%20quiero%20mejorar%20la%20visibilidad%20de%20mi%20negocio%20en%20Google%20y%20Google%20Maps.%20Mi%20rubro%20es%3A%20" target="_blank" rel="noopener">Quiero aparecer en Google</a>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-index">03</div><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 5a3 3 0 013-3h10a3 3 0 013 3v8a3 3 0 01-3 3h-5l-5 4v-4a3 3 0 01-3-3V5z"/><circle cx="9" cy="9" r="1" fill="currentColor"/><circle cx="12" cy="9" r="1" fill="currentColor"/><circle cx="15" cy="9" r="1" fill="currentColor"/></svg></div>
+            <h3>Bots de WhatsApp</h3><div class="service-promise">Responde y agenda automáticamente</div><p>Atiende preguntas frecuentes y guía al cliente hacia una reserva incluso cuando tú estás ocupado.</p>
+            <ul class="service-list"><li>Respuesta automática</li><li>Captura de datos</li><li>Flujo para agendar</li></ul>
+            <a class="service-cta" href="https://wa.me/51912618048?text=Hola%2C%20quiero%20un%20bot%20de%20WhatsApp%20para%20responder%20y%20agendar%20clientes.%20Mi%20negocio%20es%3A%20" target="_blank" rel="noopener">Quiero automatizar WhatsApp</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="proceso">
+      <div class="wrap activation">
+        <div class="activation-visual reveal">
+          <div class="rocket" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 5c3-3 6-3 7-3 0 1 0 4-3 7l-4 4-5-5 5-3z"/><path d="M9 8H5l-3 3 6 2M14 13v4l-3 3-2-6M15 6l2 2"/><path d="M5 17c-1.5.4-2.6 1.5-3 3 1.5-.4 2.6-1.5 3-3z"/></svg></div>
+          <small>Activación rápida</small><strong>De “necesito digitalizarme” a una solución funcionando.</strong>
+        </div>
+        <div>
+          <div class="section-head reveal"><span class="tag">Sin procesos eternos</span><h2>Tú cuentas el problema. Yo activo la solución.</h2><p>Un proceso directo para emprendedores que quieren avanzar sin aprender herramientas técnicas ni coordinar varios proveedores.</p></div>
           <div class="steps">
-            <article class="step">
-              <div class="step-num">1</div>
-              <div>
-                <h3>Reuno los datos de tu negocio</h3>
-                <p>Nombre, rubro, direccion, telefono, WhatsApp, mapa, servicios y cualquier detalle importante.</p>
-              </div>
-            </article>
-            <article class="step">
-              <div class="step-num">2</div>
-              <div>
-                <h3>Armo una pagina segun tu rubro</h3>
-                <p>Uso una estructura pensada para convertir: hero, servicios, confianza, ubicacion y contacto.</p>
-              </div>
-            </article>
-            <article class="step">
-              <div class="step-num">3</div>
-              <div>
-                <h3>La publico con dominio y hosting</h3>
-                <p>Te entrego una URL lista para compartir por WhatsApp, redes, Google Business o tarjetas.</p>
-              </div>
-            </article>
+            <article class="step reveal"><div class="step-num">1</div><div><h3>Cuéntame qué te está frenando</h3><p>Te pregunto por tu negocio, tus clientes y el punto que hoy te hace perder más oportunidades.</p></div></article>
+            <article class="step reveal"><div class="step-num">2</div><div><h3>Conecto la solución adecuada</h3><p>Página web, visibilidad en Google, automatización de WhatsApp o una combinación de las tres.</p></div></article>
+            <article class="step reveal"><div class="step-num">3</div><div><h3>Recibes algo listo para usar</h3><p>La solución queda configurada para que puedas compartirla, recibir consultas y empezar a vender.</p></div></article>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="modelos">
+    <section class="section compact" id="demos">
       <div class="wrap">
-        <div class="section-head">
-          <span class="tag">Modelos por rubro</span>
-          <h2>Ejemplos de como podria verse una web para tu negocio.</h2>
-          <p>Estos modelos muestran estructuras reales para negocios locales. Cuando trabajemos tu pagina, los datos, textos y llamadas a la accion se adaptan a tu caso.</p>
-        </div>
-        <div class="models-grid">
-          <article class="model">
-            <div class="model-img">
-              <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=700&q=80&fit=crop" alt="Modelo web para barberia">
-            </div>
-            <div class="model-body">
-              <div class="model-type">Barberia</div>
-              <h3>Barber Studio 2do Piso</h3>
-              <p>Servicios, reserva por WhatsApp, rating, mapa y contacto rapido para captar citas.</p>
-              <a class="model-link" href="demos/barberia-012-barber-studio-2do-piso.html" target="_blank">Ver modelo</a>
-            </div>
-          </article>
-          <article class="model">
-            <div class="model-img">
-              <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=700&q=80&fit=crop" alt="Modelo web urbano para barberia">
-            </div>
-            <div class="model-body">
-              <div class="model-type">Barberia</div>
-              <h3>Radical Barber Shop</h3>
-              <p>Pagina visual para cortes, degradados y barba con contacto directo y ubicacion local.</p>
-              <a class="model-link" href="demos/barberia-014-radical-barber-shop.html" target="_blank">Ver modelo</a>
-            </div>
-          </article>
-          <article class="model">
-            <div class="model-img">
-              <img src="https://images.unsplash.com/photo-1643660526741-094639fbe53a?q=80&w=700&auto=format&fit=crop&ixlib=rb-4.1.0" alt="Modelo web para clinica dental">
-            </div>
-            <div class="model-body">
-              <div class="model-type">Clinica dental</div>
-              <h3>Multident Villa El Salvador</h3>
-              <p>Servicios odontologicos, reputacion, agenda por WhatsApp y mapa del consultorio.</p>
-              <a class="model-link" href="demos/dentista-039-multident-villa-el-salvador-central.html" target="_blank">Ver modelo</a>
-            </div>
-          </article>
-          <article class="model">
-            <div class="model-img">
-              <img src="https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?w=700&q=80&fit=crop" alt="Modelo web para psicologia">
-            </div>
-            <div class="model-body">
-              <div class="model-type">Psicologia</div>
-              <h3>Consultorio Psicologico</h3>
-              <p>Presentacion confiable, areas de atencion, testimonios, ubicacion y consulta por WhatsApp.</p>
-              <a class="model-link" href="demos/psicologo-023-consultorio-psicologico-elizabeth-guerra.html" target="_blank">Ver modelo</a>
-            </div>
-          </article>
-          <article class="model">
-            <div class="model-img">
-              <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=700&q=80&fit=crop" alt="Modelo web para estudio fotografico">
-            </div>
-            <div class="model-body">
-              <div class="model-type">Fotografia</div>
-              <h3>Foto Midis</h3>
-              <p>Pagina para sesiones, eventos, fotografia de producto, mapa y solicitudes por WhatsApp.</p>
-              <a class="model-link" href="demos/fotografo-034-foto-midis.html" target="_blank">Ver modelo</a>
-            </div>
-          </article>
+        <div class="section-head center reveal"><span class="tag">Mira antes de decidir</span><h2>Ejemplos reales de estructuras creadas para negocios locales.</h2><p>No son promesas ni maquetas genéricas: son demos navegables que puedes abrir y revisar ahora mismo.</p></div>
+        <div class="demos-grid">
+          <article class="demo reveal"><div class="demo-icon">BS</div><div class="demo-type">Barbería</div><h3>Barber Studio 2do Piso</h3><p>Servicios, reserva, mapa y contacto rápido.</p><a class="demo-link" href="demos/barberia-012-barber-studio-2do-piso.html" target="_blank" rel="noopener">Abrir demo ↗</a></article>
+          <article class="demo reveal"><div class="demo-icon">RB</div><div class="demo-type">Barbería</div><h3>Radical Barber Shop</h3><p>Estilo urbano con foco en citas y ubicación.</p><a class="demo-link" href="demos/barberia-014-radical-barber-shop.html" target="_blank" rel="noopener">Abrir demo ↗</a></article>
+          <article class="demo reveal"><div class="demo-icon">MD</div><div class="demo-type">Clínica dental</div><h3>Multident Villa El Salvador</h3><p>Tratamientos, reputación, agenda y mapa.</p><a class="demo-link" href="demos/dentista-039-multident-villa-el-salvador-central.html" target="_blank" rel="noopener">Abrir demo ↗</a></article>
+          <article class="demo reveal"><div class="demo-icon">CP</div><div class="demo-type">Psicología</div><h3>Consultorio Psicológico</h3><p>Confianza, áreas de atención y consulta directa.</p><a class="demo-link" href="demos/psicologo-023-consultorio-psicologico-elizabeth-guerra.html" target="_blank" rel="noopener">Abrir demo ↗</a></article>
+          <article class="demo reveal"><div class="demo-icon">FM</div><div class="demo-type">Fotografía</div><h3>Foto Midis</h3><p>Sesiones, eventos, ubicación y solicitudes.</p><a class="demo-link" href="demos/fotografo-034-foto-midis.html" target="_blank" rel="noopener">Abrir demo ↗</a></article>
         </div>
       </div>
     </section>
 
-    <section class="section alt">
+    <section class="section">
       <div class="wrap">
-        <div class="price-band">
-          <div>
-            <span class="tag">Para empezar</span>
-            <h2>Una web lista para vender confianza.</h2>
-            <p>Ideal si hoy dependes solo de redes sociales, Google Maps o mensajes sueltos. Tu pagina funciona como una vitrina clara para enviar a cualquier prospecto.</p>
-            <div class="price-list">
-              <span>Dominio configurado</span>
-              <span>Hosting incluido</span>
-              <span>WhatsApp y mapa</span>
-            </div>
-          </div>
-          <div class="price-action">
-            <a class="btn-primary" href="https://wa.me/51912618048" target="_blank" rel="noopener">Pedir cotizacion</a>
-          </div>
+        <div class="offer reveal">
+          <div class="offer-copy"><span class="offer-label">🚀 Oferta emprendedor</span><h2>Soluciones rápidas, económicas y listas para vender.</h2><p>No necesitas contratar un equipo completo. Empieza con el cuello de botella más urgente de tu negocio y deja preparada la base para crecer.</p></div>
+          <div class="offer-action"><a class="btn-primary" href="https://wa.me/51912618048?text=Hola%2C%20quiero%20aprovechar%20la%20Oferta%20Emprendedor%20y%20activar%20mi%20negocio.%20Necesito%20ayuda%20con%3A%20" target="_blank" rel="noopener">Pedir mi cotización</a><span class="offer-deadline" id="offer-deadline">Agenda abierta esta semana</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact" id="preguntas">
+      <div class="wrap">
+        <div class="section-head center reveal"><span class="tag">Preguntas frecuentes</span><h2>Lo importante, claro y sin letra pequeña.</h2></div>
+        <div class="faq-list">
+          <details class="reveal"><summary>¿De verdad puedes tener una web profesional en 1 hora?</summary><div class="faq-answer">Sí, cuando ya contamos con los datos básicos del negocio: nombre, servicios, teléfono, ubicación y material visual. Si el contenido todavía no está listo, primero lo ordenamos y te indicamos el tiempo real. <a href="https://wa.me/51912618048?text=Hola%2C%20quiero%20saber%20qu%C3%A9%20necesitas%20para%20crear%20mi%20web%20en%201%20hora." target="_blank" rel="noopener">Consulta tu caso por WhatsApp.</a></div></details>
+          <details class="reveal"><summary>¿Tengo que contratar las tres soluciones?</summary><div class="faq-answer">No. Puedes empezar por el problema más urgente: tener una web, aparecer mejor en Google o responder más rápido. Si conviene conectarlas, te explico el orden antes de empezar. <a href="https://wa.me/51912618048?text=Hola%2C%20no%20s%C3%A9%20por%20cu%C3%A1l%20soluci%C3%B3n%20empezar.%20Mi%20negocio%20es%3A%20" target="_blank" rel="noopener">Cuéntame tu negocio.</a></div></details>
+          <details class="reveal"><summary>¿El dominio y el hosting están incluidos?</summary><div class="faq-answer">La solución web contempla la configuración de dominio y hosting. El alcance exacto se confirma en la cotización para que sepas desde el principio qué incluye tu proyecto. <a href="https://wa.me/51912618048?text=Hola%2C%20quiero%20una%20cotizaci%C3%B3n%20de%20web%20con%20dominio%20y%20hosting." target="_blank" rel="noopener">Pide el detalle aquí.</a></div></details>
+          <details class="reveal"><summary>¿El bot reemplaza la atención humana?</summary><div class="faq-answer">No. El bot resuelve preguntas repetidas, recoge datos y ayuda a agendar. Cuando el caso necesita atención personal, la conversación pasa a una persona. <a href="https://wa.me/51912618048?text=Hola%2C%20quiero%20ver%20c%C3%B3mo%20funcionar%C3%ADa%20un%20bot%20en%20mi%20WhatsApp." target="_blank" rel="noopener">Solicita un ejemplo.</a></div></details>
         </div>
       </div>
     </section>
 
     <section class="final">
-      <div class="wrap">
-        <h2>Si tu negocio ya recibe busquedas, una buena pagina puede convertirlas mejor.</h2>
-        <p>Escribeme por WhatsApp, dime tu rubro y te muestro que estructura conviene para tu negocio.</p>
-        <a class="btn-primary" href="https://wa.me/51912618048" target="_blank" rel="noopener">Hablar por WhatsApp</a>
+      <div class="wrap reveal">
+        <span class="eyebrow">Atención rápida por WhatsApp</span><h2>Escríbeme hoy y <span>activa tu negocio.</span></h2><p>Dime a qué te dedicas y qué quieres resolver primero. Te respondo con el siguiente paso, sin reuniones eternas ni explicaciones técnicas.</p>
+        <a class="btn-primary" href="https://wa.me/51912618048?text=Hola%2C%20vi%20tu%20web.%20Mi%20negocio%20es%20de%20________%20y%20quiero%20resolver%20________.%20%C2%BFC%C3%B3mo%20empezamos%3F" target="_blank" rel="noopener">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.116.549 4.107 1.51 5.84L.057 23.882l6.204-1.626A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.376l-.36-.214-3.681.965.981-3.595-.235-.369A9.818 9.818 0 1112 21.818z"/></svg>
+          Abrir WhatsApp ahora
+        </a>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="footer-inner">
-      <span><strong>MiPagina.pe</strong> - Paginas web para negocios locales</span>
-      <span>Dominio, hosting y desarrollo web</span>
-    </div>
-  </footer>
-
-  <a class="wa-float" href="https://wa.me/51912618048" target="_blank" rel="noopener" aria-label="Hablar por WhatsApp">
-    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.116.549 4.107 1.51 5.84L.057 23.882l6.204-1.626A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.376l-.36-.214-3.681.965.981-3.595-.235-.369A9.818 9.818 0 1112 21.818z"/>
-    </svg>
-    WhatsApp
+  <footer><div class="footer-inner"><span><strong>MiPagina.pe</strong> · Digitalización para negocios locales</span><span>Web · Google · WhatsApp</span></div></footer>
+  <a class="wa-float" href="https://wa.me/51912618048?text=Hola%2C%20vi%20tu%20web%20y%20quiero%20activar%20mi%20negocio.%20Mi%20rubro%20es%3A%20" target="_blank" rel="noopener" aria-label="Hablar por WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.116.549 4.107 1.51 5.84L.057 23.882l6.204-1.626A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.376l-.36-.214-3.681.965.981-3.595-.235-.369A9.818 9.818 0 1112 21.818z"/></svg>WhatsApp
   </a>
+
+  <script>
+    const progress = document.querySelector('.progress');
+    const topbar = document.querySelector('.topbar');
+    const updateScroll = () => {
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      progress.style.width = `${scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0}%`;
+      topbar.classList.toggle('scrolled', window.scrollY > 24);
+    };
+    window.addEventListener('scroll', updateScroll, { passive: true });
+    updateScroll();
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach((element) => revealObserver.observe(element));
+
+    const nextSunday = new Date();
+    nextSunday.setDate(nextSunday.getDate() + ((7 - nextSunday.getDay()) % 7));
+    const formattedSunday = new Intl.DateTimeFormat('es-PE', { day: 'numeric', month: 'long' }).format(nextSunday);
+    document.querySelector('#offer-deadline').textContent = `Agenda de activación abierta hasta el domingo ${formattedSunday}`;
+  </script>
 </body>
 </html>
