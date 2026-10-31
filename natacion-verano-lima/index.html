@@ -4,39 +4,53 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Página de verano para academias de natación | MiPagina.pe</title>
-<meta name="description" content="Una página para que las familias vean su academia de natación y pidan clase de prueba por WhatsApp antes del verano 2027. Plantilla base S/ 790.">
+<meta name="description" content="Para academias de natación de Lima y Callao: una página con sus turnos por edad y nivel, y clase de prueba por WhatsApp, antes del verano 2027. Plantilla base S/ 790.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#0f2530;--soft:#4d6270;--paper:#f6fbfb;--panel:#fff;--line:#d3e5e8;--brand:#176b87;--deep:#0b3c4f;--accent:#f2a541;--on-deep:#eaf6f8}
+:root{--ink:#0f2530;--soft:#4d6270;--paper:#f6fbfb;--panel:#fff;--line:#d3e5e8;--brand:#176b87;--deep:#0b3c4f;--accent:#f2a541;--on-deep:#eaf6f8;--bad:#8a4b2a}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 Inter,system-ui,sans-serif}
 h1,h2,h3{font-family:"Bricolage Grotesque",Inter,sans-serif;line-height:1.08;margin:0}
+a{color:var(--brand)}
 .wrap{max-width:1040px;margin:auto;padding:0 20px}
 .btn{display:inline-block;background:var(--accent);color:#2b1a00;font-weight:600;padding:15px 24px;border-radius:999px;text-decoration:none}
 .btn:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
 header{background:var(--deep);color:var(--on-deep);position:relative;overflow:hidden}
 nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;font-weight:600}
 nav a{color:var(--on-deep);text-decoration:none}
-.hero{padding:44px 0 120px;max-width:760px}
+.hero{padding:44px 0 120px;max-width:780px}
 .tag{color:var(--accent);font-weight:600;margin:0 0 14px}
 h1{font-size:clamp(2.4rem,7vw,4.4rem);font-weight:800}
-.hero p.sub{font-size:1.15rem;margin:22px 0 30px;max-width:640px}
+.hero p.sub{font-size:1.15rem;margin:22px 0 30px;max-width:650px}
 .lanes{position:absolute;left:0;right:0;bottom:0;height:72px;background:repeating-linear-gradient(180deg,#135b73 0 22px,#0f4c61 22px 24px)}
 .lanes:before{content:"";position:absolute;inset:0;background:radial-gradient(circle,var(--accent) 3px,transparent 4px) 0 11px/28px 24px}
 section{padding:68px 0}
+section.tight{padding-top:0}
 h2{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;margin-bottom:18px}
-.lead{max-width:680px;color:var(--soft);margin:0 0 30px}
+.lead{max-width:700px;color:var(--soft);margin:0 0 18px}
+.fact{font:800 clamp(2.6rem,8vw,4rem)/1 "Bricolage Grotesque",sans-serif;color:var(--brand);margin:0 0 8px}
+.stats{display:grid;gap:24px;grid-template-columns:1fr;margin-top:30px}
+.stats p:last-child{margin:0;color:var(--soft)}
+.compare{display:grid;gap:18px;grid-template-columns:1fr;margin-top:26px}
+.box{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px}
+.box h3{font-size:1.2rem;margin-bottom:12px}
+.box.before h3{color:var(--bad)}
+.box.after{border:2px solid var(--brand)}
+.box.after h3{color:var(--brand)}
+.box ul{list-style:none;padding:0;margin:0}
+.box li{padding:9px 0;border-top:1px solid var(--line)}
+.bubble{background:#dcf5e6;border-radius:14px 14px 14px 2px;padding:14px 16px;margin-top:14px}
+.caption{font-size:.92rem;color:var(--soft);margin:14px 0 0}
 .steps{list-style:none;padding:0;margin:0;display:grid;gap:0;border-top:2px solid var(--brand)}
 .steps li{display:grid;grid-template-columns:64px 1fr;gap:12px;padding:20px 0;border-bottom:1px solid var(--line)}
 .steps b{font:800 2rem "Bricolage Grotesque",sans-serif;color:var(--brand)}
 .steps h3{font-size:1.2rem;margin-bottom:4px}
 .steps p{margin:0;color:var(--soft)}
-.chat{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px;max-width:520px}
-.chat small{color:var(--soft);display:block;margin-bottom:10px}
-.bubble{background:#dcf5e6;border-radius:14px 14px 14px 2px;padding:14px 16px}
+.first{background:#fff3df;border-top:1px solid #f0d9ae;border-bottom:1px solid #f0d9ae}
+.first .lead{color:var(--ink)}
 .price{background:var(--deep);color:var(--on-deep)}
 .price h2{color:#fff}
 .price .lead{color:var(--on-deep)}
@@ -46,14 +60,13 @@ h2{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;margin-bottom:18px}
 .amount{font:800 3rem "Bricolage Grotesque",sans-serif;color:var(--brand);margin:10px 0}
 .card ul{padding-left:20px;margin:12px 0 0}
 .card li{margin:6px 0}
-.note{font-size:.95rem;margin-top:22px}
+.cta-line{margin-top:30px}
 details{border-bottom:1px solid var(--line);padding:16px 0}
 summary{font-weight:600;cursor:pointer}
 details p{margin:10px 0 0;color:var(--soft)}
 footer{background:var(--deep);color:var(--on-deep);padding:56px 0;text-align:center}
 footer h2{color:#fff}
-.float{position:fixed;right:16px;bottom:16px;box-shadow:0 8px 24px rgba(0,0,0,.25)}
-@media(min-width:800px){.cols{grid-template-columns:1fr 1fr}.two{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}}
+@media(min-width:800px){.cols,.compare{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr 1fr}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
@@ -62,10 +75,10 @@ footer h2{color:#fff}
   <div class="wrap">
     <nav><span>MiPagina.pe</span><a href="#precio">Precio</a></nav>
     <div class="hero">
-      <p class="tag">Para academias de natación de Lima, verano 2027</p>
-      <h1>Que la familia pida su clase de prueba antes de que llegue enero</h1>
-      <p class="sub">Una página donde ven sus turnos por edad y nivel, y piden la clase de prueba por WhatsApp con el mensaje ya armado. Más el aviso a las familias del verano pasado.</p>
-      <a class="btn" href="https://wa.me/51912618048?text=Hola%2C%20tengo%20una%20academia%20de%20nataci%C3%B3n%20y%20quiero%20ver%20una%20muestra%20para%20el%20verano%202027" rel="noopener">Pedir una muestra por WhatsApp</a>
+      <p class="tag">Para academias de natación de Lima y Callao, verano 2027</p>
+      <h1>Empiece a llenar sus turnos de verano antes de que llegue enero</h1>
+      <p class="sub">Las familias ven sus turnos por edad y nivel, y le piden la clase de prueba por WhatsApp con la edad y el turno ya indicados. Usted responde a un pedido completo, no a un "¿cuánto cuesta?".</p>
+      <a class="btn" href="https://wa.me/51912618048?text=Hola%2C%20tengo%20una%20academia%20de%20nataci%C3%B3n%20y%20quiero%20ver%20una%20muestra%20para%20el%20verano%202027" rel="noopener">Ver una muestra con mi academia</a>
     </div>
   </div>
   <div class="lanes" aria-hidden="true"></div>
@@ -73,27 +86,73 @@ footer h2{color:#fff}
 
 <main>
 <section>
-  <div class="wrap two">
-    <div>
-      <h2>El verano se decide en pocas semanas</h2>
-      <p class="lead">Según la Federación Deportiva Nacional de Deportes Acuáticos, enero y febrero concentran hasta 50% de la afluencia anual de las academias (<a href="https://gestion.pe/economia/empresas/academias-de-natacion-verano-concentra-hasta-el-50-del-negocio-anual-noticia/" rel="noopener">Gestión, enero de 2026</a>). Cuando una mamá busca en Google y solo encuentra una dirección o un Facebook, le toca escribir y esperar para saber si hay clase para la edad de su hijo.</p>
-    </div>
-    <div class="chat">
-      <small>Lo que recibiría su academia</small>
-      <div class="bubble">Hola, quisiera una clase de prueba de natación para mi hija de 6 años, turno tarde, para el verano 2027.</div>
+  <div class="wrap">
+    <h2>Lo que encontramos al revisar a las academias</h2>
+    <p class="lead">Los meses que más pesan son también los más cortos. Si su academia no se deja ver bien antes de enero, la familia que busca en Google se queda con la dirección o con un Facebook, y tiene que escribir y esperar para saber si hay clase para la edad de su hijo. Por eso conviene tener la página publicada a inicios de diciembre.</p>
+    <div class="stats">
+      <div>
+        <p class="fact">50%</p>
+        <p>Enero y febrero concentran hasta la mitad de la afluencia anual de las academias, según la Federación Deportiva Nacional de Deportes Acuáticos (<a href="https://gestion.pe/economia/empresas/academias-de-natacion-verano-concentra-hasta-el-50-del-negocio-anual-noticia/" rel="noopener">Gestión, enero de 2026</a>).</p>
+      </div>
+      <div>
+        <p class="fact">130</p>
+        <p>Fichas de natación de Lima y Callao que revisamos en Google Maps, una por una, en octubre de 2026.</p>
+      </div>
+      <div>
+        <p class="fact">32</p>
+        <p>Academias privadas con celular cuya ficha no lleva a una página propia que funcione: no muestra web, lleva a una red social o a un enlace caído.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section style="padding-top:0">
+<section class="tight">
   <div class="wrap">
-    <h2>Qué incluye la plantilla base</h2>
+    <h2>Qué cambia para su academia</h2>
+    <p class="lead">Este es un ejemplo ilustrativo, con una academia inventada. La muestra que le preparamos a usted lleva los datos públicos de la suya.</p>
+    <div class="compare">
+      <div class="box before">
+        <h3>Hoy en Google</h3>
+        <ul>
+          <li>Dirección, teléfono y un enlace a Facebook</li>
+          <li>Sin turnos a la vista: hay que preguntar</li>
+          <li>Sin precio a la vista: hay que preguntar</li>
+          <li>Le llega un mensaje: "Hola, info por favor"</li>
+        </ul>
+      </div>
+      <div class="box after">
+        <h3>Con su página de verano</h3>
+        <ul>
+          <li>Turnos y cupos por edad y nivel</li>
+          <li>Precio y ubicación, sin tener que preguntar</li>
+          <li>Un solo paso: pedir la clase de prueba</li>
+        </ul>
+        <div class="bubble">Hola, quisiera una clase de prueba de natación para mi hija de 6 años, turno tarde, para el verano 2027.</div>
+        <p class="caption">El mensaje que le llegaría a usted.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap">
+    <h2>Qué recibe con la plantilla base</h2>
     <ol class="steps">
-      <li><b>1</b><div><h3>Su página de verano</h3><p>Turnos y cupos por edad y nivel, precio, ubicación y lo que dicen de usted en Google. Se publica hasta el 31 de marzo de 2027.</p></div></li>
-      <li><b>2</b><div><h3>Clase de prueba por WhatsApp</h3><p>La familia elige para quién, la edad y el turno. A usted le llega el pedido completo.</p></div></li>
-      <li><b>3</b><div><h3>Aviso a las familias del verano pasado</h3><p>Con la lista que usted nos entregue, y solo a familias que dieron permiso, un envío para que reserven primero.</p></div></li>
-      <li><b>4</b><div><h3>Recordatorio en febrero</h3><p>Un segundo envío para las familias que quieran seguir en marzo.</p></div></li>
+      <li><b>1</b><div><h3>Las familias resuelven sus dudas sin escribirle</h3><p>Su página de verano, con turnos y cupos por edad y nivel, precio, ubicación y lo que dicen de usted en Google. Se publica hasta el 31 de marzo de 2027.</p></div></li>
+      <li><b>2</b><div><h3>Le llegan pedidos completos</h3><p>La familia elige para quién es la clase, la edad y el turno, y le escribe por WhatsApp con todo eso ya indicado.</p></div></li>
+      <li><b>3</b><div><h3>Sus familias de siempre reservan primero</h3><p>Con la lista que usted nos entregue, y solo a familias que dieron permiso, un envío antes de que empiece la temporada.</p></div></li>
+      <li><b>4</b><div><h3>Un empujón para seguir en marzo</h3><p>Un segundo envío en febrero, para las familias que quieran continuar cuando acabe el verano.</p></div></li>
     </ol>
+  </div>
+</section>
+
+<section class="first">
+  <div class="wrap">
+    <h2>Todavía no tenemos casos. Por eso las 3 primeras pagan menos</h2>
+    <p class="lead">No vamos a mostrarle testimonios que no existen. Este servicio es nuevo y ninguna academia lo ha usado todavía.</p>
+    <p class="lead"><strong>Las 3 primeras academias pagan S/ 390 en vez de S/ 790.</strong> A cambio, al terminar el verano nos dan un testimonio y permiso para mostrar sus reservas. La protagonista de ese caso será su academia, con su nombre y lo que consiguió.</p>
+    <p class="lead">Lo que sí puede ver hoy, sin pagar nada, es la muestra con los datos públicos de su academia.</p>
+    <a class="btn" href="https://wa.me/51912618048?text=Hola%2C%20tengo%20una%20academia%20de%20nataci%C3%B3n%20y%20quiero%20saber%20si%20a%C3%BAn%20hay%20cupo%20entre%20las%203%20primeras" rel="noopener">Preguntar si aún hay cupo</a>
   </div>
 </section>
 
@@ -105,8 +164,7 @@ footer h2{color:#fff}
       <div class="card">
         <h3>Plantilla base</h3>
         <p class="amount">S/ 790</p>
-        <p>S/ 400 al aceptar y S/ 390 al publicar. Lista en 5 días hábiles desde que recibimos sus turnos y precios.</p>
-        <p>Las 3 primeras academias pagan S/ 390 a cambio de un testimonio y de permiso para mostrar sus reservas.</p>
+        <p>S/ 400 al aceptar y S/ 390 cuando su página ya está publicada. Lista en 5 días hábiles desde que recibimos sus turnos y precios.</p>
       </div>
       <div class="card">
         <h3>Personalización, aparte</h3>
@@ -117,16 +175,25 @@ footer h2{color:#fff}
         </ul>
       </div>
     </div>
-    <p class="note">Todavía no tenemos academias atendidas, por eso no mostramos casos. Lo que sí le mostramos es una muestra hecha con los datos públicos de su academia.</p>
+    <p class="cta-line"><a class="btn" href="https://wa.me/51912618048?text=Hola%2C%20tengo%20una%20academia%20de%20nataci%C3%B3n%20y%20quiero%20ver%20una%20muestra%20para%20el%20verano%202027" rel="noopener">Ver una muestra con mi academia</a></p>
   </div>
 </section>
 
 <section>
   <div class="wrap">
+    <h2>Quién está detrás</h2>
+    <p class="lead">MiPagina.pe es el servicio de páginas web de Enrique Parra, en Lima. Para el verano 2027 nos dedicamos a este encargo: que una academia de natación tenga sus turnos a la vista y reciba pedidos de clase de prueba por WhatsApp.</p>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap">
     <h2>Preguntas frecuentes</h2>
     <details><summary>¿Me garantizan alumnos?</summary><p>No. Le entregamos la página y los envíos. Cuántas familias se inscriben depende también de su oferta, sus horarios y cómo responda por WhatsApp.</p></details>
+    <details><summary>¿Tengo que pagar para ver la muestra?</summary><p>No. La muestra es sin compromiso y se hace con los datos públicos de su academia. Solo paga si decide contratar.</p></details>
     <details><summary>Ya tengo Facebook. ¿Para qué otra cosa?</summary><p>Su Facebook puede seguir igual. La página ordena lo que la familia pregunta primero y lleva a un solo paso: pedir la clase de prueba.</p></details>
     <details><summary>¿Necesito tener lista de familias?</summary><p>No. Sin lista, se entrega la página y no se hacen los envíos.</p></details>
+    <details><summary>¿Qué tengo que darles?</summary><p>Sus turnos, cupos y precios. Si quiere los envíos, también la lista de familias que dieron permiso para recibir mensajes.</p></details>
     <details><summary>¿Incluye anuncios o dominio propio?</summary><p>No. Se conversan aparte si los necesita.</p></details>
   </div>
 </section>
@@ -136,7 +203,7 @@ footer h2{color:#fff}
   <div class="wrap">
     <h2>Vea cómo quedaría con su academia</h2>
     <p>Pídala por WhatsApp. Es sin compromiso.</p>
-    <a class="btn" href="https://wa.me/51912618048?text=Hola%2C%20tengo%20una%20academia%20de%20nataci%C3%B3n%20y%20quiero%20ver%20una%20muestra%20para%20el%20verano%202027" rel="noopener">Pedir una muestra</a>
+    <a class="btn" href="https://wa.me/51912618048?text=Hola%2C%20tengo%20una%20academia%20de%20nataci%C3%B3n%20y%20quiero%20ver%20una%20muestra%20para%20el%20verano%202027" rel="noopener">Ver una muestra con mi academia</a>
     <p style="margin-top:28px;font-size:.9rem">MiPagina.pe, Lima, Perú</p>
   </div>
 </footer>
