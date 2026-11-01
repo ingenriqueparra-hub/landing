@@ -43,6 +43,8 @@ footer{padding:28px 0;text-align:center;color:var(--gris);font-size:.88rem}
 .ad{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
 .ad ul{margin:0;padding-left:20px;color:var(--gris)}.ad li{margin:6px 0}
 .antes{border-color:#e7c3c3;background:#fdf6f6}.despues{border-color:#bfe3cc;background:#f4fbf6}
+.hero-link{display:inline-block;margin-left:18px;padding:12px 0;color:inherit;font-weight:600}
+.cierre{background:linear-gradient(160deg,var(--azul),var(--azul2));color:#fff}.cierre h2{color:#fff}.cierre .lead{color:#dfe6f3}
 .barra span{color:var(--gris);font-size:.9rem}
 @media(min-width:760px){.barra{display:none}body{padding-bottom:0}}
 </style>
@@ -53,14 +55,15 @@ footer{padding:28px 0;text-align:center;color:var(--gris);font-size:.88rem}
   <a class="btn chico wa" href="https://wa.me/51912618048?text=Hola%20Enrique%2C%20quiero%20ver%20la%20muestra%20de%20admisi%C3%B3n%202027%20de%20mi%20colegio">Ver la muestra de mi colegio</a>
 </div></header>
 
-<section class="hero"><div class="w">
+<section class="hero" data-parte="inicio"><div class="w">
   <small>Colegios privados de Lima Sur, admisión 2027</small>
   <h1>Cada familia que pregunta por una vacante, atendida y con su visita agendada</h1>
   <p>Una página con tus grados, vacantes y costos 2027, lista en 10 días. Las familias agendan su visita por grado, y cada una recibe seguimiento por WhatsApp hasta que matricule o te diga que no.</p>
-  <a class="btn wa" href="https://wa.me/51912618048?text=Hola%20Enrique%2C%20quiero%20ver%20la%20muestra%20de%20admisi%C3%B3n%202027%20de%20mi%20colegio">Quiero ver la muestra de mi colegio</a>
+  <a class="btn wa" href="https://wa.me/51912618048?text=Hola%20Enrique%2C%20quiero%20ver%20la%20muestra%20de%20admisi%C3%B3n%202027%20de%20mi%20colegio">Ver una muestra con mi colegio</a>
+  <a class="hero-link" href="/admision-colegios-lima-sur/ejemplo/">Ver la plantilla de ejemplo</a>
 </div></section>
 
-<section class="sec"><div class="w">
+<section class="sec" data-parte="evidencia"><div class="w">
   <h2>Lo que pasa hoy en noviembre</h2>
   <p class="lead">Las familias de tu distrito comparan colegios en Google. Encuentran tu ficha, pero no una página con tus grados ni tus costos. Te escriben por WhatsApp y secretaría responde cuando puede.</p>
   <div class="grid">
@@ -70,7 +73,7 @@ footer{padding:28px 0;text-align:center;color:var(--gris);font-size:.88rem}
   <p class="nota">Revisamos sus fichas de Google Maps el 30 de octubre de 2026. Cuántas familias se pierden por eso no lo sabemos: eso lo sabe cada colegio.</p>
 </div></section>
 
-<section class="sec gris"><div class="w">
+<section class="sec gris" data-parte="recibe"><div class="w">
   <h2>Qué recibes</h2>
   <div class="grid">
     <div class="card"><div class="num">1</div><h3>Página de admisión 2027</h3><p>Niveles y grados, sedes, vacantes y costos 2027, requisitos, ubicación y tu código modular del MINEDU como prueba de que eres un colegio registrado.</p></div>
@@ -81,7 +84,7 @@ footer{padding:28px 0;text-align:center;color:var(--gris);font-size:.88rem}
   </div>
 </div></section>
 
-<section class="sec"><div class="w">
+<section class="sec" data-parte="antes-despues"><div class="w">
   <h2>Antes y después</h2>
   <p class="lead">Lo que ve una familia que busca tu colegio en Google, hoy y con la página.</p>
   <div class="ad">
@@ -101,7 +104,7 @@ footer{padding:28px 0;text-align:center;color:var(--gris);font-size:.88rem}
   <p style="margin-top:22px"><a class="btn wa" href="https://wa.me/51912618048?text=Hola%20Enrique%2C%20quiero%20ver%20la%20muestra%20de%20admisi%C3%B3n%202027%20de%20mi%20colegio">Ver cómo quedaría mi colegio</a></p>
 </div></section>
 
-<section class="sec"><div class="w">
+<section class="sec" data-parte="ejemplo"><div class="w">
   <h2>Plantilla para colegios y personalización</h2>
   <p class="lead">La página parte de una plantilla hecha para la admisión escolar. Con tus datos ya funciona; si quieres que lleve tu marca, se personaliza aparte.</p>
   <p class="lead"><a class="btn" href="/admision-colegios-lima-sur/ejemplo/">Abrir la plantilla de ejemplo</a></p>
@@ -115,18 +118,18 @@ footer{padding:28px 0;text-align:center;color:var(--gris);font-size:.88rem}
   </table>
 </div></section>
 
-<section class="sec gris"><div class="w">
+<section class="sec gris" data-parte="prueba"><div class="w">
   <h2>La prueba, antes de pagar nada</h2>
   <p class="lead">Todavía no mostramos resultados de otros colegios porque estamos empezando. La prueba es una muestra de la página de admisión de tu propio colegio, armada con tus datos públicos del padrón del MINEDU y de tu ficha de Google. La ves antes de decidir.</p>
   <p class="lead">Los tres primeros colegios pagan precio de fundador. A cambio, al cerrar la admisión, publicamos su caso: cuántas familias preguntaron, cuántas visitaron y cuántas matricularon. El protagonista del caso es el colegio, no nosotros.</p>
 </div></section>
 
-<section class="sec"><div class="w">
+<section class="sec" data-parte="quien"><div class="w">
   <h2>Quién está detrás</h2>
   <p class="lead">Soy Enrique Parra, ingeniero de sistemas y responsable de MiPagina.pe, en Lima. Armo la página, configuro el seguimiento por WhatsApp y te envío los números cada mes. Si tienes una duda, me escribes a mí, no a una central.</p>
 </div></section>
 
-<section class="sec"><div class="w">
+<section class="sec" data-parte="precio"><div class="w">
   <h2>Precio</h2>
   <div class="precio">
     <p>Campaña de admisión, de noviembre 2026 a marzo 2027</p>
@@ -140,7 +143,7 @@ footer{padding:28px 0;text-align:center;color:var(--gris);font-size:.88rem}
   </div>
 </div></section>
 
-<section class="sec gris"><div class="w">
+<section class="sec gris" data-parte="preguntas"><div class="w">
   <h2>Preguntas frecuentes</h2>
   <details><summary>Ya tenemos Facebook</summary><p>Facebook no aparece cuando una familia busca "colegio en Villa El Salvador" en Google, y no ordena quién pidió visita ni para qué grado.</p></details>
   <details><summary>No queremos publicar las pensiones</summary><p>Indecopi pide informarlas antes de la matrícula. Publicarlas le ahorra a secretaría responder la misma pregunta todo el día.</p></details>
@@ -149,6 +152,12 @@ footer{padding:28px 0;text-align:center;color:var(--gris);font-size:.88rem}
   <details><summary>Ya tenemos una web</summary><p>Si tu web ya muestra grados, costos y una forma de pedir visita, quizá no nos necesitas. Si no, la página de admisión se enlaza desde tu web y desde tu ficha de Google.</p></details>
   <details><summary>¿El dominio es nuestro?</summary><p>Sí, a nombre del colegio.</p></details>
   <details><summary>¿Qué datos necesitan de nosotros?</summary><p>Vacantes por grado, costos 2027, requisitos y hasta 6 fotos. Con eso, la página queda publicada en 10 días.</p></details>
+</div></section>
+
+<section class="sec cierre" data-parte="cierre"><div class="w">
+  <h2>Tu admisión 2027 empieza en noviembre</h2>
+  <p class="lead">Te preparo una muestra con los datos públicos de tu colegio. La ves antes de decidir nada.</p>
+  <a class="btn wa" href="https://wa.me/51912618048?text=Hola%20Enrique%2C%20quiero%20ver%20la%20muestra%20de%20admisi%C3%B3n%202027%20de%20mi%20colegio">Ver una muestra con mi colegio</a>
 </div></section>
 
 <footer>MiPagina.pe, páginas de admisión para colegios de Lima Sur. Te escribe Enrique Parra.</footer>
