@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="es-PE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Plantilla de ejemplo de admisión 2027 | MiPagina.pe</title>
+<meta name="description" content="Admisión 2027 en Colegio Valle Celeste, Villa El Salvador: Inicial, Primaria y Secundaria. Agenda una visita y consulta vacantes por grado.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--azul:#16325c;--azul2:#24497f;--sol:#f4b400;--sol2:#ffd45c;--tinta:#1d2533;--gris:#5b6475;--fondo:#f6f7fb;--linea:#e2e6ef}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:Nunito,system-ui,Segoe UI,Roboto,sans-serif;color:var(--tinta);background:#fff;line-height:1.55;padding-bottom:72px}
+.w{max-width:1040px;margin:0 auto;padding:0 16px}
+.aviso{background:#fff7d6;color:#6b5200;font-size:.85rem;text-align:center;padding:6px 16px}
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--linea)}
+header .w{display:flex;align-items:center;justify-content:space-between;gap:12px;height:60px}
+.marca{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--azul);text-decoration:none;min-width:0}
+.marca span:last-child{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ini{flex:none;width:36px;height:36px;border-radius:50%;background:var(--azul);color:var(--sol2);display:grid;place-items:center;font-weight:800}
+.btn{display:inline-block;border:0;cursor:pointer;font:inherit;font-weight:800;text-decoration:none;border-radius:999px;padding:12px 22px;background:var(--sol);color:#2b2100;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}.btn.chico{padding:8px 16px;font-size:.92rem;flex:none}
+.btn.claro{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.6)}
+.hero{background:linear-gradient(160deg,var(--azul) 0%,var(--azul2) 100%);color:#fff;padding:56px 0 64px}
+.hero small{display:inline-block;background:rgba(255,255,255,.12);padding:4px 12px;border-radius:999px;font-weight:600}
+.hero h1{font-size:clamp(2rem,6vw,3.3rem);line-height:1.1;margin:14px 0 12px;letter-spacing:-.02em}
+.hero p.sub{font-size:1.15rem;max-width:640px;opacity:.92;margin:0 0 24px}
+.acciones{display:flex;flex-wrap:wrap;gap:12px}
+.minedu{margin-top:28px;display:flex;gap:10px;align-items:flex-start;max-width:640px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:12px 14px;font-size:.95rem}
+.minedu a{color:var(--sol2)}
+.sec{padding:56px 0}.sec.gris{background:var(--fondo)}
+h2{font-size:clamp(1.5rem,4vw,2.1rem);color:var(--azul);margin:0 0 8px;letter-spacing:-.01em}
+.lead{color:var(--gris);margin:0 0 28px;max-width:680px}
+.niveles,.sedes,.pasos{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.nivel,.sede,.paso{background:#fff;border:1px solid var(--linea);border-radius:18px;padding:20px}
+.nivel h3,.sede h3,.paso h3{margin:0 0 6px;color:var(--azul)}
+.nivel p,.sede p,.paso p{margin:0 0 12px;color:var(--gris)}
+.donde{font-size:.9rem}
+.grados{display:flex;flex-wrap:wrap;gap:8px}
+.grado{font:inherit;font-size:.9rem;border:1px solid var(--linea);background:var(--fondo);color:var(--azul);border-radius:999px;padding:6px 12px;cursor:pointer}
+.grado:hover{border-color:var(--sol);background:#fff8e1}
+.chip{display:inline-block;background:var(--fondo);border-radius:999px;padding:4px 10px;font-size:.9rem}
+.paso b{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--sol);color:#2b2100;margin-bottom:10px}
+.costos{background:#fff;border:1px dashed var(--linea);border-radius:18px;padding:20px}
+.costos ul{margin:8px 0 0;padding-left:20px;color:var(--gris)}
+.mapa{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.mapa .caja{background:var(--fondo);border-radius:18px;padding:20px}
+.mapa a{color:var(--azul2);font-weight:700}
+details{border-bottom:1px solid var(--linea);padding:14px 0}summary{cursor:pointer;font-weight:700;color:var(--azul)}
+details p{color:var(--gris);margin:8px 0 0}
+form{background:#fff;border:1px solid var(--linea);border-radius:18px;padding:20px;display:grid;gap:14px;max-width:560px}
+label{display:grid;gap:6px;font-weight:600;font-size:.95rem}
+input,select{font:inherit;padding:11px 12px;border:1px solid var(--linea);border-radius:10px;width:100%;background:#fff}
+.check{display:flex;gap:10px;align-items:flex-start;font-weight:400;color:var(--gris);font-size:.9rem}.check input{width:auto;margin-top:4px}
+.antes{background:#101a2e;color:#e8ecf5;padding:48px 0}
+.antes h2{color:#fff}.antes .lead{color:#b9c3d8}
+.ad{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.ad div{border-radius:18px;padding:20px}.ad .hoy{background:#2a1d1d;border:1px solid #5c3434}.ad .con{background:#14283f;border:1px solid #2f5d8f}
+.ad h3{margin:0 0 8px}.ad ul{margin:0;padding-left:20px}
+.antes .fin{margin-top:24px}
+footer{padding:28px 0;color:var(--gris);font-size:.85rem;text-align:center}
+.barra{position:fixed;left:0;right:0;bottom:0;z-index:30;background:#fff;border-top:1px solid var(--linea);padding:10px 16px;display:flex;gap:10px;align-items:center;justify-content:space-between}
+.barra span{font-size:.9rem;color:var(--gris)}
+@media(min-width:760px){.barra{display:none}body{padding-bottom:0}}
+.modal{position:fixed;inset:0;background:rgba(10,18,35,.6);display:none;place-items:center;padding:16px;z-index:50}
+.modal.on{display:grid}.modal>div{background:#fff;border-radius:18px;padding:22px;max-width:480px;width:100%}
+.modal pre{white-space:pre-wrap;background:#e9f7ef;border-radius:12px;padding:14px;font-family:inherit;margin:12px 0}
+.fic{display:inline-block;vertical-align:middle;background:#fff1c2;color:#6b5200;font-size:.72rem;font-weight:700;border-radius:999px;padding:2px 8px;margin-left:6px;letter-spacing:0}
+</style>
+</head>
+<body>
+<header><div class="aviso">Ejemplo con datos ficticios, preparado por MiPagina.pe. Este colegio no existe.</div><div class="w">
+  <a class="marca" href="#inicio"><span class="ini">V</span><span>Colegio Valle Celeste</span></a>
+  <a class="btn chico" href="#visita">Agendar visita</a>
+</div></header>
+
+<section class="hero" id="inicio"><div class="w">
+  <small>Admisión 2027, Villa El Salvador</small>
+  <h1>Admisión 2027 en Colegio Valle Celeste <span class="fic">ficticio</span></h1>
+  <p class="sub">Inicial, Primaria y Secundaria, en turno mañana <span class="fic">ficticio</span>. Elige el grado de tu hijo o hija y agenda una visita para conocer el colegio.</p>
+  <div class="acciones">
+    <a class="btn" href="#visita">Agendar una visita</a>
+    <a class="btn claro" href="#niveles">Ver grados</a>
+  </div>
+  <div class="minedu"><span>✔</span><span>Aquí va el código modular del MINEDU del colegio <span class="fic">ficticio</span>. Puedes comprobarlo en el <a href="https://escale.minedu.gob.pe/PadronWeb/" target="_blank" rel="noopener">padrón oficial de instituciones educativas</a>.</span></div>
+</div></section>
+
+<section class="sec" id="niveles"><div class="w">
+  <h2>Niveles y grados</h2>
+  <p class="lead">Toca el grado que buscas y te llevamos directo a la solicitud de visita.</p>
+  <div class="niveles"><article class="nivel"><h3>Inicial</h3><p>Los primeros pasos: juego, lenguaje y convivencia.</p><div class="grados"><button type="button" class="grado" data-grado="3 años">3 años</button><button type="button" class="grado" data-grado="4 años">4 años</button><button type="button" class="grado" data-grado="5 años">5 años</button></div></article><article class="nivel"><h3>Primaria</h3><p>Lectura, matemática y hábitos de estudio, de 1.º a 6.º grado.</p><div class="grados"><button type="button" class="grado" data-grado="1.º de primaria">1.º de primaria</button><button type="button" class="grado" data-grado="2.º de primaria">2.º de primaria</button><button type="button" class="grado" data-grado="3.º de primaria">3.º de primaria</button><button type="button" class="grado" data-grado="4.º de primaria">4.º de primaria</button><button type="button" class="grado" data-grado="5.º de primaria">5.º de primaria</button><button type="button" class="grado" data-grado="6.º de primaria">6.º de primaria</button></div></article><article class="nivel"><h3>Secundaria</h3><p>Cinco años de preparación para lo que sigue después del colegio.</p><div class="grados"><button type="button" class="grado" data-grado="1.º de secundaria">1.º de secundaria</button><button type="button" class="grado" data-grado="2.º de secundaria">2.º de secundaria</button><button type="button" class="grado" data-grado="3.º de secundaria">3.º de secundaria</button><button type="button" class="grado" data-grado="4.º de secundaria">4.º de secundaria</button><button type="button" class="grado" data-grado="5.º de secundaria">5.º de secundaria</button></div></article></div>
+</div></section>
+
+
+
+<section class="sec gris" id="costos"><div class="w">
+  <h2>Vacantes y costos 2027</h2>
+  <div class="costos">
+    <p>Las vacantes por grado y los costos 2027 te los informamos en la visita y por WhatsApp, apenas nos indiques el grado:</p>
+    <ul><li>Matrícula 2027</li><li>Pensión mensual</li><li>Cuota de ingreso, si corresponde</li></ul>
+  </div>
+</div></section>
+
+<section class="sec" id="como"><div class="w">
+  <h2>Cómo es la visita</h2>
+  <p class="lead">Tres pasos, sin compromiso.</p>
+  <div class="pasos">
+    <article class="paso"><b>1</b><h3>Eliges grado y día</h3><p>Llenas la solicitud en menos de un minuto.</p></article>
+    <article class="paso"><b>2</b><h3>Te confirmamos por WhatsApp</h3><p>Secretaría te escribe con el día y la hora de tu visita.</p></article>
+    <article class="paso"><b>3</b><h3>Conoces el colegio</h3><p>Ves las aulas y resuelves tus dudas sobre vacantes y costos.</p></article>
+  </div>
+</div></section>
+
+<section class="sec gris" id="ubicacion"><div class="w">
+  <h2>Dónde estamos</h2>
+  <div class="mapa">
+    <div class="caja"><p><b>Av. Ejemplo 000</b> <span class="fic">ficticio</span><br>Villa El Salvador, Lima</p><p>En la página real, aquí va el enlace a su ficha de Google Maps.</p></div>
+    <div class="caja"><p><b>WhatsApp de secretaría</b><br>El número del colegio <span class="fic">ficticio</span></p><p>Turno mañana.</p></div>
+  </div>
+</div></section>
+
+<section class="sec" id="preguntas"><div class="w">
+  <h2>Preguntas frecuentes</h2>
+  <details><summary>¿Qué grados tienen?</summary><p>Inicial: 3, 4 y 5 años. Primaria: de 1.º de primaria a 6.º de primaria. Secundaria: de 1.º de secundaria a 5.º de secundaria.</p></details>
+  <details><summary>¿En qué turno estudian?</summary><p>En turno mañana.</p></details>
+  <details><summary>¿Cómo pido una vacante para 2027?</summary><p>Llena la solicitud de visita con el grado. Secretaría te confirma por WhatsApp y en la visita te informa las vacantes y los costos 2027.</p></details>
+  <details><summary>¿Dónde queda el colegio?</summary><p>Av. Ejemplo 000, Villa El Salvador <span class="fic">ficticio</span>.</p></details>
+</div></section>
+
+<section class="sec gris" id="visita"><div class="w">
+  <h2>Agenda tu visita</h2>
+  <p class="lead">Te respondemos por WhatsApp para confirmar el día.</p>
+  <form id="f">
+    <label>Nombre del apoderado<input name="apoderado" required autocomplete="name"></label>
+    <label>Celular<input name="cel" required inputmode="tel" pattern="9[0-9 ]{8,10}" placeholder="9xx xxx xxx"></label>
+    <label>Grado que buscas para 2027<select name="grado" id="grado" required><option value="">Elige el grado</option><option>3 años</option><option>4 años</option><option>5 años</option><option>1.º de primaria</option><option>2.º de primaria</option><option>3.º de primaria</option><option>4.º de primaria</option><option>5.º de primaria</option><option>6.º de primaria</option><option>1.º de secundaria</option><option>2.º de secundaria</option><option>3.º de secundaria</option><option>4.º de secundaria</option><option>5.º de secundaria</option></select></label>
+    <label>Día preferido<select name="dia"><option>Lunes a viernes por la mañana</option><option>Lunes a viernes por la tarde</option><option>Sábado</option></select></label>
+    <label class="check"><input type="checkbox" required> Acepto que el colegio me escriba por WhatsApp sobre la admisión 2027.</label>
+    <button class="btn" type="submit">Solicitar visita</button>
+  </form>
+</div></section>
+
+<section class="antes"><div class="w">
+  <h2>Qué trae la plantilla y qué se personaliza</h2>
+  <p class="lead">Esta página es la plantilla base para colegios, armada con un colegio que no existe. La de su colegio lleva sus datos.</p>
+  <div class="ad">
+    <div class="con"><h3>Incluido en la plantilla</h3><ul>
+      <li>Sus niveles y grados, cada uno con su botón.</li>
+      <li>Su código modular del MINEDU, con enlace al padrón oficial.</li>
+      <li>Vacantes, costos 2027, requisitos, sedes y ubicación.</li>
+      <li>Solicitud de visita por grado, que llega ordenada a secretaría.</li>
+      <li>Seguimiento por WhatsApp a cada familia que pidió visita.</li>
+    </ul></div>
+    <div class="hoy"><h3>Personalización, aparte (desde S/ 400)</h3><ul>
+      <li>Logo, colores y tipografía del colegio.</li>
+      <li>Sesión de fotos o video en el colegio.</li>
+      <li>Textos propios: historia, propuesta pedagógica, valores.</li>
+      <li>Secciones extra: talleres, movilidad, galería.</li>
+    </ul></div>
+  </div>
+  <p class="fin"><a class="btn" href="https://wa.me/51912618048?text=Hola%20Enrique%2C%20quiero%20ver%20la%20muestra%20de%20admisi%C3%B3n%202027%20de%20mi%20colegio">Quiero ver la muestra de mi colegio</a></p>
+  <p class="fin"><a href="/admision-colegios-lima-sur/" style="color:#ffd45c">Volver a la presentación</a></p>
+</div></section>
+
+<footer>Plantilla de ejemplo de MiPagina.pe. El colegio, la dirección y los datos rotulados son ficticios.</footer>
+
+<div class="barra"><span>Admisión 2027</span><a class="btn chico" href="#visita">Agendar visita</a></div>
+
+<div class="modal" id="m"><div>
+  <h3>Así le llega a secretaría</h3>
+  <p>En la página real, esta solicitud entra al sistema del colegio y secretaría recibe:</p>
+  <pre id="msg"></pre>
+  <p>Es una muestra: no se envió nada.</p>
+  <button class="btn" type="button" id="cerrar">Entendido</button>
+</div></div>
+
+<script>
+document.querySelectorAll('.grado').forEach(function(b){b.addEventListener('click',function(){
+  document.getElementById('grado').value=b.dataset.grado;document.getElementById('visita').scrollIntoView();});});
+document.getElementById('f').addEventListener('submit',function(ev){ev.preventDefault();var d=new FormData(ev.target);
+  document.getElementById('msg').textContent='Nueva solicitud de visita, admisión 2027\nApoderado: '+d.get('apoderado')+'\nCelular: '+d.get('cel')+'\nGrado: '+d.get('grado')+'\nDía preferido: '+d.get('dia');
+  document.getElementById('m').classList.add('on');});
+document.getElementById('cerrar').addEventListener('click',function(){document.getElementById('m').classList.remove('on');});
+</script>
+</body>
+</html>
