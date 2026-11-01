@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="es-PE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Plantilla de ejemplo para academias de natación | MiPagina.pe</title>
+<meta name="description" content="Plantilla de ejemplo con datos ficticios. Se adapta a cada academia.">
+<meta name="theme-color" content="#06303f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,800;1,800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --acento:#2EE6C5;--tinta-acento:#03312C;--acento-fuerte:#087564;
+  --fondo:#06303f;--agua:#0b5468;--agua-clara:#bfe6e6;--baldosa:#f3f7f2;--linea:#d3e2de;--tinta:#0a2a35;--suave:#47636c;
+  --display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;--texto:"Barlow","Segoe UI",Arial,sans-serif;
+  --ondas:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='90'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='.09' stroke-width='2'%3E%3Cpath d='M0 22c40-16 80-16 120 0s80 16 120 0'/%3E%3Cpath d='M0 66c40 14 80 14 120 0s80-14 120 0'/%3E%3C/g%3E%3C/svg%3E");
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--baldosa);color:var(--tinta);font:400 17px/1.5 var(--texto)}
+h1,h2,h3,p,ul{margin:0;padding:0}
+ul{list-style:none}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--acento-fuerte);outline-offset:2px}
+.envoltura{width:100%;max-width:1120px;margin:0 auto;padding:0 18px}
+[id]{scroll-margin-top:44px}
+
+.aviso{position:sticky;top:0;z-index:20;background:#04202b;color:#fff;font-size:12.5px;font-weight:600;line-height:1.3;text-align:center;padding:8px 10px;border-bottom:2px solid var(--acento)}
+
+/* Inicio: la piscina vista desde arriba, cada bloque es un carril */
+.inicio{position:relative;overflow:hidden;background:var(--fondo);color:#fff}
+.inicio::before{content:"";position:absolute;inset:0;background:var(--ondas);animation:agua 26s linear infinite}
+@keyframes agua{to{background-position:240px 90px}}
+.cartel-2027{position:absolute;right:-14px;bottom:-34px;font:italic 800 clamp(150px,44vw,420px)/.85 var(--display);color:transparent;-webkit-text-stroke:2px rgba(255,255,255,.1);pointer-events:none}
+.carril{position:relative;padding:26px 0}
+.carril>.envoltura{position:relative;z-index:1}
+.cuerda{position:relative;z-index:2;height:9px;background:repeating-linear-gradient(90deg,var(--acento) 0 24px,#fff 24px 48px);box-shadow:inset 0 -3px 0 rgba(0,0,0,.2)}
+.prefijo{font:600 19px/1.1 var(--display);letter-spacing:.09em;text-transform:uppercase;color:var(--agua-clara)}
+.nombre{font:italic 800 clamp(62px,17vw,132px)/.9 var(--display);text-transform:uppercase;margin:6px 0 10px;letter-spacing:-.005em}
+.lugar{display:inline-block;background:var(--acento);color:var(--tinta-acento);font:800 18px/1 var(--display);letter-spacing:.05em;text-transform:uppercase;padding:6px 10px 7px}
+.titular{font:800 clamp(31px,8vw,50px)/1.04 var(--display);max-width:19em}
+.bajada{margin-top:10px;max-width:34em;color:#d9eeee}
+.boton{display:inline-block;border:0;border-radius:4px;background:var(--acento);color:var(--tinta-acento);font:800 23px/1 var(--display);letter-spacing:.015em;padding:16px 22px 17px;text-decoration:none;box-shadow:0 5px 0 rgba(0,0,0,.28);transition:transform .12s,box-shadow .12s}
+.boton:active{transform:translateY(4px);box-shadow:0 1px 0 rgba(0,0,0,.28)}
+.boton:focus-visible{outline-color:#fff}
+
+/* Selector */
+.selector{padding:42px 0 46px;background:var(--baldosa);background-image:linear-gradient(var(--linea) 1px,transparent 1px),linear-gradient(90deg,var(--linea) 1px,transparent 1px);background-size:38px 38px}
+.seccion-titulo{font:800 clamp(36px,9vw,56px)/1 var(--display);letter-spacing:-.005em}
+.selector-intro{margin:8px 0 22px;color:var(--suave);max-width:34em}
+.selector-rejilla{display:grid;gap:18px}
+.pasos{background:#fff;border:2px solid var(--tinta);border-radius:6px;overflow:hidden}
+.paso{padding:18px 16px 20px;border-top:2px solid var(--tinta)}
+.paso:first-child{border-top:0}
+.paso-titulo{display:flex;align-items:center;gap:10px;font:800 25px/1.05 var(--display);margin-bottom:12px}
+.paso-num{flex:none;display:grid;place-items:center;width:32px;height:32px;background:var(--tinta);color:#fff;font:800 21px/1 var(--display)}
+.quien{display:grid;gap:8px}
+.opcion{display:block;width:100%;text-align:left;background:#eaf4f2;border:2px solid transparent;border-radius:4px;padding:11px 13px}
+.opcion b{display:block;font:800 22px/1.1 var(--display)}
+.opcion small{display:block;font-size:14.5px;line-height:1.35;color:var(--suave);margin-top:2px}
+.opcion[aria-pressed=true]{background:var(--acento);color:var(--tinta-acento);border-color:var(--tinta)}
+.opcion[aria-pressed=true] small{color:inherit}
+.genero{display:flex;gap:8px;margin-top:9px;align-items:center;font-size:15px}
+.genero[hidden]{display:none}
+.chip{background:#fff;border:2px solid var(--tinta);border-radius:99px;padding:5px 16px;font-weight:600;font-size:15px}
+.chip[aria-pressed=true]{background:var(--tinta);color:#fff}
+.edad-fila{display:flex;align-items:center;gap:12px}
+.edad-valor{flex:1;text-align:center;font:800 42px/1 var(--display)}
+.edad-valor.apagado{font:600 19px/1.15 var(--display);color:var(--suave)}
+.mas-menos{flex:none;width:48px;height:48px;border:2px solid var(--tinta);border-radius:50%;background:#fff;font:800 28px/1 var(--display);padding:0 0 3px}
+.mas-menos:disabled,input[type=range]:disabled{opacity:.35;cursor:not-allowed}
+input[type=range]{-webkit-appearance:none;appearance:none;display:block;width:100%;height:44px;margin:10px 0 0;background:transparent}
+input[type=range]::-webkit-slider-runnable-track{height:12px;background:repeating-linear-gradient(90deg,var(--agua) 0 14px,#fff 14px 28px);border:1px solid var(--tinta);border-radius:6px}
+input[type=range]::-moz-range-track{height:12px;background:repeating-linear-gradient(90deg,var(--agua) 0 14px,#fff 14px 28px);border:1px solid var(--tinta);border-radius:6px}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:34px;height:34px;margin-top:-12px;border-radius:50%;background:var(--acento);border:3px solid var(--tinta)}
+input[type=range]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;background:var(--acento);border:3px solid var(--tinta)}
+.turnos{border:2px solid var(--tinta);background:var(--agua);border-radius:4px;overflow:hidden}
+.turno{display:flex;align-items:center;gap:12px;width:100%;min-height:52px;background:var(--ondas),var(--agua);color:#fff;border:0;padding:7px 13px;text-align:left;font:800 23px/1 var(--display);position:relative}
+.turno+.turno{margin-top:7px}
+.turno+.turno::before{content:"";position:absolute;left:0;right:0;top:-7px;height:7px;background:repeating-linear-gradient(90deg,#fff 0 12px,var(--acento) 12px 24px)}
+.turno i{font:600 14px/1 var(--display);letter-spacing:.08em;text-transform:uppercase;opacity:.75}
+.turno[aria-pressed=true]{background:var(--acento);color:var(--tinta-acento)}
+.turno[aria-pressed=true] i{opacity:1}
+.nota-paso{margin-top:10px;font-size:14.5px;line-height:1.4;color:var(--suave)}
+.salida{position:sticky;bottom:8px;z-index:10;background:var(--fondo);color:#fff;border-radius:6px;padding:14px;box-shadow:0 10px 26px rgba(4,32,43,.35)}
+.salida.fija{position:static}
+.salida-rotulo{font:600 15px/1.2 var(--display);letter-spacing:.07em;text-transform:uppercase;color:var(--agua-clara);margin-bottom:7px}
+.burbuja{background:#dcf7d2;color:#10281a;border-radius:3px 10px 10px 10px;padding:9px 12px;font-size:15.5px;line-height:1.38;min-height:64px}
+.salida .boton{width:100%;margin-top:12px;font-size:22px;padding:14px 12px 15px}
+.falta{margin-top:9px;font-size:14px;line-height:1.35;color:#ffe2a8}
+.falta:empty{display:none}
+.explica{margin-top:12px;border-left:6px solid var(--acento);padding:3px 0 3px 11px}
+.explica b{display:block;font:800 22px/1.12 var(--display)}
+.explica span{display:block;margin-top:4px;font-size:14.5px;color:#d9eeee}
+.explica[hidden]{display:none}
+
+/* Datos */
+.datos{padding:46px 0;background:#fff;border-top:2px solid var(--tinta)}
+.dato-mayor{margin:20px 0 6px;font:italic 800 clamp(66px,19vw,128px)/.92 var(--display);color:var(--agua)}
+.dato-mayor-texto{font-size:18px;font-weight:600;max-width:30em}
+.filas{margin-top:22px;border-top:2px solid var(--tinta)}
+.filas li{display:grid;grid-template-columns:42px 1fr;gap:10px;padding:13px 0;border-bottom:2px dashed #9fc2c4}
+.filas li>span{font:italic 800 34px/1 var(--display);color:var(--acento-fuerte)}
+.filas li:only-child{grid-template-columns:1fr}
+.filas li:only-child>span{display:none}
+.filas b{font:800 24px/1.1 var(--display);display:block}
+.filas small{font-size:14.5px;color:var(--suave)}
+
+/* Prueba */
+.prueba{position:relative;background:var(--agua);color:#fff;padding:46px 0;overflow:hidden}
+.prueba::before{content:"";position:absolute;inset:0;background:var(--ondas)}
+.prueba>.envoltura{position:relative}
+.marcador{display:flex;align-items:flex-end;gap:12px;margin:18px 0 8px}
+.marcador strong{font:italic 800 112px/.82 var(--display);color:var(--acento)}
+.marcador span{font-weight:600;line-height:1.2;padding-bottom:3px}
+.nivel{height:16px;background:#04202b;border-radius:3px;overflow:hidden;max-width:440px}
+.nivel i{display:block;height:100%;background:repeating-linear-gradient(90deg,var(--acento) 0 22px,#fff 22px 24px)}
+.dichos{margin-top:24px}
+.dichos li{font:600 clamp(26px,6.6vw,36px)/1.14 var(--display);padding:13px 0;border-top:1px solid rgba(255,255,255,.3)}
+.dichos small{display:block;margin-top:5px;font:400 14.5px/1.35 var(--texto);color:#cde8e8}
+.fuente{margin-top:12px;font-size:13.5px;color:#cde8e8}
+
+/* Cómo llegar */
+.llegar{padding:46px 0;background:var(--baldosa)}
+.direccion{margin:16px 0 10px;font:800 clamp(30px,7.8vw,46px)/1.05 var(--display);max-width:22em}
+.referencia{max-width:34em}
+.enlace-mapa{display:inline-block;margin-top:16px;font-weight:700;color:var(--acento-fuerte);text-underline-offset:4px;text-decoration-thickness:2px;padding:6px 0}
+
+/* Hoy / Con */
+.dueno{background:#fff;border-top:2px solid var(--tinta);padding:46px 0}
+.para-dueno{font:600 16px/1.2 var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--acento-fuerte);margin-bottom:8px}
+.comparar{display:grid;margin-top:20px;border:2px solid var(--tinta);border-radius:6px;overflow:hidden}
+.lado{padding:18px 16px}
+.lado h3{font:800 28px/1 var(--display);margin-bottom:10px}
+.hoy{background:#e6e8e6}
+.hoy p{font-size:18px;font-weight:500}
+.hoy p+p{margin-top:9px}
+.con{background:var(--ondas),var(--fondo);color:#fff;border-top:2px solid var(--tinta)}
+.con li{padding:8px 0 8px 22px;position:relative;line-height:1.38}
+.con li::before{content:"";position:absolute;left:0;top:13px;width:12px;height:12px;border-radius:50%;background:var(--acento)}
+.revisado{margin-top:12px;font-size:13.5px;color:var(--suave)}
+
+/* Cierre */
+.cierre{position:relative;overflow:hidden;background:var(--fondo);color:#fff;text-align:center;padding:52px 0 30px}
+.cierre::before{content:"";position:absolute;inset:0;background:var(--ondas)}
+.cierre>.envoltura{position:relative}
+.cierre h2{font:800 clamp(38px,10vw,64px)/1 var(--display);margin-bottom:8px}
+.cierre p{margin-bottom:22px;color:#d9eeee}
+.cierre small{display:block;margin-top:34px;font-size:12.5px;color:#a9cdd0}
+
+@media (min-width:900px){
+  .selector-rejilla{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);align-items:start;gap:26px}
+  .salida{top:56px;bottom:auto;padding:20px}
+  .burbuja{font-size:17px;min-height:110px}
+  .quien.tres{grid-template-columns:repeat(3,1fr)}
+  .quien.dos{grid-template-columns:repeat(2,1fr)}
+  .datos .envoltura{display:grid;grid-template-columns:1fr 1fr;column-gap:56px}
+  .datos .seccion-titulo{grid-column:1/-1}
+  .filas{margin-top:26px}
+  .prueba .envoltura{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);column-gap:56px}
+  .prueba .seccion-titulo{grid-column:1/-1}
+  .dichos{margin-top:18px}
+  .comparar{grid-template-columns:1fr 1.2fr}
+  .con{border-top:0;border-left:2px solid var(--tinta)}
+  .lado{padding:26px}
+  .carril{padding:32px 0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.inicio::before{animation:none}}
+
+/* Solo en el ejemplo */
+.horario{padding:46px 0;background:#fff;border-top:2px solid var(--tinta)}
+.turnos-lista{display:grid;gap:12px}
+.turnos-lista li{display:grid;gap:4px;border:2px solid var(--tinta);border-radius:6px;padding:14px}
+.turnos-lista b{display:block;font:800 25px/1.1 var(--display)}
+.turnos-lista small{font-size:14.5px;color:var(--suave)}
+.turnos-lista .monto{font:800 24px/1.1 var(--display);color:var(--acento-fuerte)}
+.turnos-lista .cupos{font-weight:600;font-size:15px}
+.probar{margin-top:18px}
+.probar-titulo{font-weight:600;margin-bottom:9px}
+.colores{display:flex;flex-wrap:wrap;gap:8px}
+.color{display:flex;align-items:center;gap:8px;min-height:44px;background:#fff;border:2px solid var(--linea);border-radius:99px;padding:6px 14px;font-weight:600;font-size:15px}
+.color i{width:20px;height:20px;border-radius:50%;border:1px solid var(--tinta)}
+.color[aria-pressed=true]{border-color:var(--tinta)}
+.incluye li{padding:7px 0;font-weight:500}
+.accion-dueno{margin-top:24px}
+@media (min-width:900px){.turnos-lista li{grid-template-columns:1.2fr 1.5fr .7fr .7fr;align-items:center;gap:16px}}
+</style>
+</head>
+<body>
+<div class="aviso" role="note">Ejemplo con datos ficticios, preparado por MiPagina.pe. Esta academia no existe</div>
+
+<header class="inicio">
+  <div class="cartel-2027" aria-hidden="true">2027</div>
+  <div class="carril"><div class="envoltura">
+    <p class="prefijo">Academia de Natación</p>
+    <h1 class="nombre">Carril Azul</h1>
+    <p class="lugar">Lima</p>
+  </div></div>
+  <div class="cuerda" aria-hidden="true"></div>
+  <div class="carril"><div class="envoltura">
+    <p class="titular">Verano 2027: aprenda a nadar en grupos pequeños, por edad y nivel</p>
+    <p class="bajada">Vea los turnos, elija el suyo y pida su clase de prueba por WhatsApp.</p>
+  </div></div>
+  <div class="cuerda" aria-hidden="true"></div>
+  <div class="carril"><div class="envoltura">
+    <a class="boton" href="#selector">Elegir clase de prueba</a>
+  </div></div>
+</header>
+
+<main>
+<section class="selector" id="selector" aria-labelledby="t-selector">
+  <div class="envoltura">
+    <h2 class="seccion-titulo" id="t-selector">Pida su clase de prueba en tres pasos</h2>
+    <p class="selector-intro">Elija y mire cómo se escribe el mensaje solo, sin tener que llamar.</p>
+    <div class="selector-rejilla">
+      <div class="pasos">
+        <div class="paso">
+          <h3 class="paso-titulo" id="t-quien"><span class="paso-num">1</span>¿Para quién es la clase?</h3>
+          <div class="quien dos" role="group" aria-labelledby="t-quien">
+            <button type="button" class="opcion" data-quien aria-pressed="false"><b>Para mi hijo o hija</b><small>Desde los 3 años, en este ejemplo.</small></button>
+            <button type="button" class="opcion" data-quien aria-pressed="false"><b>Para mí</b><small>Turno de jóvenes y adultos, en este ejemplo.</small></button>
+          </div>
+          <div class="genero" id="genero" hidden role="group" aria-label="Precise">
+            <button type="button" class="chip" data-genero="a" aria-pressed="false"></button>
+            <button type="button" class="chip" data-genero="o" aria-pressed="false"></button>
+          </div>
+        </div>
+        <div class="paso">
+          <h3 class="paso-titulo" id="t-edad"><span class="paso-num">2</span>¿Qué edad tiene?</h3>
+          <div class="edad-fila">
+            <button type="button" class="mas-menos" id="edad-menos" aria-label="Un año menos" disabled>&minus;</button>
+            <div class="edad-valor apagado" id="edad-valor" aria-live="polite">Primero elija para quién</div>
+            <button type="button" class="mas-menos" id="edad-mas" aria-label="Un año más" disabled>+</button>
+          </div>
+          <input type="range" id="edad" min="1" max="17" value="6" disabled aria-labelledby="t-edad">
+        </div>
+        <div class="paso">
+          <h3 class="paso-titulo" id="t-turno"><span class="paso-num">3</span>¿Qué turno prefiere?</h3>
+          <div class="turnos" role="group" aria-labelledby="t-turno">
+            <button type="button" class="turno" data-turno="mañana" aria-pressed="false"><i>Carril 1</i>Mañana</button>
+            <button type="button" class="turno" data-turno="tarde" aria-pressed="false"><i>Carril 2</i>Tarde</button>
+            <button type="button" class="turno" data-turno="noche" aria-pressed="false"><i>Carril 3</i>Noche</button>
+          </div>
+          <p class="nota-paso">En su página, estas opciones se ajustan a los turnos de su academia.</p>
+        </div>
+      </div>
+      <div class="salida" id="salida">
+        <p class="salida-rotulo" id="rotulo">Su mensaje se va armando</p>
+        <div class="burbuja" id="mensaje" aria-live="polite"></div>
+        <button type="button" class="boton" id="pedir">Pedir clase de prueba</button>
+        <p class="falta" id="falta" role="status"></p>
+        <div class="explica" id="explica" hidden>
+          <b>En su página este botón abre WhatsApp de la academia</b>
+          <span>Con este mensaje ya escrito. Como este es un ejemplo, no se envió nada.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="horario" aria-labelledby="t-horario">
+  <div class="envoltura">
+    <h2 class="seccion-titulo" id="t-horario">Turnos de verano</h2>
+    <p class="selector-intro">Turnos, precios y cupos inventados para este ejemplo. En su página van los suyos.</p>
+    <ul class="turnos-lista">
+      <li><div><b>Niños de 3 a 5 años</b><small>Iniciación</small></div><p>Lunes, miércoles y viernes, 9:00 a 9:45</p><p class="monto">S/ 300 al mes</p><p class="cupos">Quedan 4 cupos</p></li>
+      <li><div><b>Niños de 6 a 12 años</b><small>Iniciación</small></div><p>Martes, jueves y sábado, 10:00 a 10:45</p><p class="monto">S/ 320 al mes</p><p class="cupos">Quedan 6 cupos</p></li>
+      <li><div><b>Niños de 6 a 12 años</b><small>Intermedio</small></div><p>Lunes, miércoles y viernes, 16:00 a 16:45</p><p class="monto">S/ 320 al mes</p><p class="cupos">Quedan 3 cupos</p></li>
+      <li><div><b>Jóvenes y adultos</b><small>Todos los niveles</small></div><p>Martes y jueves, 19:00 a 20:00</p><p class="monto">S/ 340 al mes</p><p class="cupos">Quedan 5 cupos</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="datos" aria-labelledby="t-datos">
+  <div class="envoltura">
+    <h2 class="seccion-titulo" id="t-datos">Sobre la academia</h2>
+    <div>
+      <p class="dato-mayor">6 alumnos</p>
+      <p class="dato-mayor-texto">Máximo por profesor, en esta academia de ejemplo.</p>
+    </div>
+    <ul class="filas">
+      <li><span>1</span><div><b>Agua temperada</b><small>Dato inventado para el ejemplo.</small></div></li>
+      <li><span>2</span><div><b>Desde los 3 años</b><small>Dato inventado para el ejemplo.</small></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="prueba" aria-labelledby="t-prueba">
+  <div class="envoltura">
+    <h2 class="seccion-titulo" id="t-prueba">Lo que dicen en Google, de ejemplo</h2>
+    <div>
+      <div class="marcador"><strong>4,7</strong><span>de 5 en Google,<br>con 120 reseñas</span></div>
+      <div class="nivel" aria-hidden="true"><i style="width:94%"></i></div>
+      <p class="fuente">Nota y comentarios inventados. En su página van los de su academia.</p>
+    </div>
+    <ul class="dichos">
+      <li>Mi hija perdió el miedo al agua en las primeras semanas.<small>Comentario inventado para este ejemplo.</small></li>
+      <li>Es fácil saber qué turno le toca a cada edad.<small>Comentario inventado para este ejemplo.</small></li>
+    </ul>
+  </div>
+</section>
+
+<section class="llegar" aria-labelledby="t-llegar">
+  <div class="envoltura">
+    <h2 class="seccion-titulo" id="t-llegar">Cómo llegar</h2>
+    <p class="direccion">Av. de Ejemplo 123, Lima</p>
+    <p class="referencia">Dirección ficticia. En su página van su dirección, su referencia y su enlace a Google Maps.</p>
+  </div>
+</section>
+
+<section class="dueno" aria-labelledby="t-dueno">
+  <div class="envoltura">
+    <p class="para-dueno">Para el dueño de la academia</p>
+    <h2 class="seccion-titulo" id="t-dueno">Esta plantilla se adapta a su academia</h2>
+    <div class="probar">
+      <p class="probar-titulo">Pruebe cómo cambia con otro color</p>
+      <div class="colores" role="group" aria-label="Color de la página">
+          <button type="button" class="color" data-a="#2EE6C5" data-t="#03312C" data-f="#087564" aria-pressed="true"><i style="background:#2EE6C5"></i>Turquesa</button>
+          <button type="button" class="color" data-a="#FF6B35" data-t="#1D0F08" data-f="#B23C0D" aria-pressed="false"><i style="background:#FF6B35"></i>Naranja</button>
+          <button type="button" class="color" data-a="#FFC629" data-t="#2A1E00" data-f="#7F5C00" aria-pressed="false"><i style="background:#FFC629"></i>Amarillo</button>
+          <button type="button" class="color" data-a="#FF5C8A" data-t="#2C0512" data-f="#AD1147" aria-pressed="false"><i style="background:#FF5C8A"></i>Rosado</button>
+      </div>
+    </div>
+    <div class="comparar">
+      <div class="lado hoy">
+        <h3>Incluido en la plantilla base</h3>
+        <ul class="incluye">
+          <li>Sus turnos, cupos y precios</li>
+          <li>Las edades y niveles que usted enseña</li>
+          <li>El selector de clase de prueba, conectado a su WhatsApp</li>
+          <li>Su dirección y su nota de Google</li>
+        </ul>
+      </div>
+      <div class="lado con">
+        <h3>Personalización, aparte</h3>
+        <ul>
+          <li>Logo, colores, fotos y textos propios: S/ 390</li>
+          <li>Cada sección extra: S/ 120</li>
+        </ul>
+      </div>
+    </div>
+    <p class="accion-dueno"><a class="boton" href="https://wa.me/51912618048?text=Hola%2C%20tengo%20una%20academia%20de%20nataci%C3%B3n%20y%20quiero%20ver%20una%20muestra%20para%20el%20verano%202027" rel="noopener">Ver una muestra con mi academia</a></p>
+    <p class="revisado"><a href="/natacion-verano-lima/">Volver a la información y los precios</a></p>
+  </div>
+</section>
+</main>
+
+<footer class="cierre">
+  <div class="envoltura">
+    <h2>Verano 2027: pida su clase de prueba</h2>
+    <p>Consulte turnos de verano con la academia.</p>
+    <a class="boton" href="#selector">Pedir clase de prueba</a>
+    <small>Plantilla base; logo, colores, fotos y textos propios se personalizan aparte</small>
+  </div>
+</footer>
+
+<script>
+var C = {"opciones": [{"etiqueta": "Para mi hijo o hija", "tipo": "persona", "frase": "mi hijo o hija", "min": 1, "max": 17, "edad": 6, "generos": {"a": {"etiqueta": "Mi hija", "frase": "mi hija"}, "o": {"etiqueta": "Mi hijo", "frase": "mi hijo"}}, "detalle": "Desde los 3 años, en este ejemplo."}, {"etiqueta": "Para mí", "tipo": "mi", "min": 18, "max": 80, "edad": 30, "detalle": "Turno de jóvenes y adultos, en este ejemplo."}]};
+(function () {
+  var estado = { quien: null, genero: null, edad: null, turno: null, pedido: false };
+  var $ = function (id) { return document.getElementById(id); };
+  var botonesQuien = document.querySelectorAll('[data-quien]');
+  var botonesTurno = document.querySelectorAll('[data-turno]');
+  var chips = document.querySelectorAll('[data-genero]');
+  var rango = $('edad');
+
+  function opcion() { return estado.quien === null ? null : C.opciones[estado.quien]; }
+  function anos(n) { return n + (n === 1 ? ' año' : ' años'); }
+
+  function armar() {
+    var op = opcion();
+    var turno = estado.turno ? ', turno ' + estado.turno : '';
+    var cola = turno + ', para el verano 2027';
+    if (!op) return 'Hola, quisiera una clase de prueba de natación' + cola;
+    if (op.tipo === 'pregunta') {
+      return 'Hola, ¿tienen clases de natación para adultos? Tengo ' + anos(estado.edad) +
+        ' y quisiera una clase de prueba' + cola;
+    }
+    if (op.tipo === 'mi') {
+      return 'Hola, quisiera una clase de prueba de natación para mí, tengo ' + anos(estado.edad) + cola;
+    }
+    var quien = (op.generos && estado.genero) ? op.generos[estado.genero].frase : op.frase;
+    return 'Hola, quisiera una clase de prueba de natación para ' + quien + ' de ' + anos(estado.edad) + cola;
+  }
+
+  function faltantes() {
+    var f = [];
+    if (estado.quien === null) f.push('para quién es la clase');
+    if (!estado.turno) f.push('el turno');
+    return f;
+  }
+
+  function pintar() {
+    var op = opcion();
+    $('mensaje').textContent = armar();
+    botonesQuien.forEach(function (b, i) { b.setAttribute('aria-pressed', String(i === estado.quien)); });
+    botonesTurno.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.turno === estado.turno)); });
+    chips.forEach(function (c) { c.setAttribute('aria-pressed', String(c.dataset.genero === estado.genero)); });
+    $('genero').hidden = !(op && op.generos);
+    if (op && op.generos) {
+      chips.forEach(function (c) { c.textContent = op.generos[c.dataset.genero].etiqueta; });
+    }
+    var activo = !!op;
+    rango.disabled = !activo;
+    $('edad-menos').disabled = !activo || estado.edad <= op.min;
+    $('edad-mas').disabled = !activo || estado.edad >= op.max;
+    var valor = $('edad-valor');
+    valor.classList.toggle('apagado', !activo);
+    valor.textContent = activo ? anos(estado.edad) : 'Primero elija para quién';
+    if (activo) { rango.min = op.min; rango.max = op.max; rango.value = estado.edad; }
+    $('explica').hidden = !estado.pedido;
+    $('salida').classList.toggle('fija', estado.pedido);
+    $('rotulo').textContent = estado.pedido ? 'Este mensaje llegaría a la academia' : 'Su mensaje se va armando';
+    if (!faltantes().length) $('falta').textContent = '';
+  }
+
+  botonesQuien.forEach(function (b, i) {
+    b.addEventListener('click', function () {
+      var op = C.opciones[i];
+      estado.quien = i;
+      estado.genero = null;
+      if (estado.edad === null || estado.edad < op.min || estado.edad > op.max) estado.edad = op.edad;
+      pintar();
+    });
+  });
+  chips.forEach(function (c) {
+    c.addEventListener('click', function () { estado.genero = c.dataset.genero; pintar(); });
+  });
+  botonesTurno.forEach(function (b) {
+    b.addEventListener('click', function () { estado.turno = b.dataset.turno; pintar(); });
+  });
+  rango.addEventListener('input', function () { estado.edad = Number(rango.value); pintar(); });
+  $('edad-menos').addEventListener('click', function () { estado.edad -= 1; pintar(); });
+  $('edad-mas').addEventListener('click', function () { estado.edad += 1; pintar(); });
+  $('pedir').addEventListener('click', function () {
+    var f = faltantes();
+    if (f.length) {
+      $('falta').textContent = 'Para terminar el mensaje, elija ' + f.join(' y ') + '.';
+      return;
+    }
+    estado.pedido = true;
+    pintar();
+    $('salida').scrollIntoView({ block: 'center' });
+  });
+  pintar();
+})();
+</script>
+<script>
+document.querySelectorAll('.color').forEach(function (b, _, todos) {
+  b.addEventListener('click', function () {
+    var r = document.documentElement.style;
+    r.setProperty('--acento', b.dataset.a);
+    r.setProperty('--tinta-acento', b.dataset.t);
+    r.setProperty('--acento-fuerte', b.dataset.f);
+    todos.forEach(function (o) { o.setAttribute('aria-pressed', String(o === b)); });
+  });
+});
+</script>
+</body>
+</html>
